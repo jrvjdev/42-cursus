@@ -5,7 +5,7 @@ Repository created for 42lisboa projects
 
 |Order|Circle|Project|Stack|Status|Subject|Score|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|01|00|[**Libft**](?)|C|Completed|[Subject](https://github.com/jrvjdev/42-cursus/blob/main/circle-00/en.Libft.pdf)|![joaribei's 42 Libft Score](https://badge42.vercel.app/api/v2/cl44difj7001109l4bo53lzz1/project/2380680)|
+|01|00|[**Libft**](https://github.com/jrvjdev/42-cursus/tree/main/circle-00/Libft)|C|Completed|[Subject](https://github.com/jrvjdev/42-cursus/blob/main/circle-00/en.Libft.pdf)|![joaribei's 42 Libft Score](https://badge42.vercel.app/api/v2/cl44difj7001109l4bo53lzz1/project/2380680)|
 |02|01|[**get_next_line**](?)|C|Completed|[Subject](https://github.com/jrvjdev/42-cursus/blob/main/circle-01/en.get_next_line.pdf)|![joaribei's 42 get_next_line Score](https://badge42.vercel.app/api/v2/cl44difj7001109l4bo53lzz1/project/2408364)|
 |03|01|[**ft_printf**](?)|C|Completed|[Subject](https://github.com/jrvjdev/42-cursus/blob/main/circle-01/en.ft_printf.pdf)|![joaribei's 42 ft_printf Score](https://badge42.vercel.app/api/v2/cl44difj7001109l4bo53lzz1/project/2443512)|
 |04|01|[**Born2beroot**](?)|VirtualBox|Completed|[Subject](https://github.com/jrvjdev/42-cursus/blob/main/circle-01/en.Born2beroot.pdf)|![joaribei's 42 Born2beroot Score](https://badge42.vercel.app/api/v2/cl44difj7001109l4bo53lzz1/project/2445933)|
