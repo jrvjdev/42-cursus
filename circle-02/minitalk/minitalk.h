@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/29 16:35:34 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/16 22:03:29 by joaribei          #+#    #+#             */
+/*   Updated: 2022/06/16 22:47:06 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#ifndef MINITALK_H
+# define MINITALK_H
 
 # include <stdio.h>
-# include <readline/readline.h>
-
-# include "malloc.h"
-# include "string.h"
-# include "command.h"
-# include "env.h"
+# include <signal.h>
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
 
 #endif

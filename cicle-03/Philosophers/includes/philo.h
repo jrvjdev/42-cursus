@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/29 16:35:34 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/14 19:49:49 by joaribei          #+#    #+#             */
+/*   Updated: 2022/06/14 23:02:26 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#ifndef PHILO_H
+# define PHILO_H
 
 # include <stdio.h>
-# include <readline/readline.h>
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
 
-# include "malloc.h"
-# include "string.h"
-# include "command.h"
-# include "env.h"
+typedef struct s_philo
+{
+	int				index;
+	struct s_philo	*next;
+}	t_philo;
+
 
 #endif

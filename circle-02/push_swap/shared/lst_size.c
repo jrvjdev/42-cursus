@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   lst_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/29 16:35:34 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/02 20:45:23 by joaribei          #+#    #+#             */
+/*   Updated: 2022/06/11 10:44:14 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <readline/readline.h>
+int	lst_size(t_list *lst)
+{
+	int	i;
 
-# include "malloc.h"
-# include "string.h"
-# include "command.h"
-# include "env.h"
-
-#endif
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}

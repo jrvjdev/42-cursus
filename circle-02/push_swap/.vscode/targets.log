@@ -1,0 +1,554 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Tue Jun 21 12:49:08 2022
+
+# Variables
+
+# makefile (from `Makefile', line 24)
+CHECKER_DIR = ./checker
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 17)
+GRNGRN = \033[38;5;46m
+# makefile (from `Makefile', line 19)
+RST = \033[0m
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from `Makefile', line 65)
+INCLUDES = -I$(INC_DIR)
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/joaoribeiro/Library/Mobile Documents/com~apple~CloudDocs/Projects/42-cursus/circle-02/push_swap
+# makefile
+SHELL = /bin/sh
+# makefile (from `Makefile', line 57)
+BIN = ${BIN_DIR}/${NAME}
+# environment
+ 
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 29)
+SHARED_SRCS = ${SHARED_DIR}/ft_atoi.c ${SHARED_DIR}/lst_add_back.c ${SHARED_DIR}/lst_clear.c ${SHARED_DIR}/lst_delone.c ${SHARED_DIR}/lst_last.c ${SHARED_DIR}/lst_new.c ${SHARED_DIR}/lst_size.c ${SHARED_DIR}/lst_sorted.c ${SHARED_DIR}/lts_add_front.c ${SHARED_DIR}/print_list.c ${SHARED_DIR}/push.c ${SHARED_DIR}/reverse.c ${SHARED_DIR}/rotate.c ${SHARED_DIR}/swap.c 
+# makefile (from `Makefile', line 25)
+PUSH_SWAP_DIR = ./push_swap
+# makefile (from `Makefile', line 59)
+CHECKER_OBJS = $(subst .c,.o,$(subst ${CHECKER_DIR},${OBJ_DIR},${CHECKER_SRCS}))
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 55)
+OBJ_DIR = ${BUILD_DIR}/obj
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/n7/4jvr5x6d1z79zw6k99qsl2pm0000gn/T/vscode-ipc-271b5404-c214-4d8f-b55a-e1516eec06a2.sock
+# environment
+VSCODE_CWD = /
+# makefile (from `Makefile', line 58)
+PUSH_SWAP_OBJS = $(subst .c,.o,$(subst ${PUSH_SWAP_DIR},${OBJ_DIR},${PUSH_SWAP_SRCS}))
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Users/joaoribeiro/Library/Python/3.8/bin:/Library/Apple/usr/bin
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from `Makefile', line 56)
+BIN_DIR = ${BUILD_DIR}/bin
+# makefile (from `Makefile', line 64)
+CFLAGS = -Werror -Wall -Wextra
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `Makefile', line 16)
+GRN = \033[0;32m
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.A35ZPsBgBV/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /Users/joaoribeiro/Library/Mobile Documents/com~apple~CloudDocs/Projects/42-cursus/circle-02/push_swap
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from `Makefile', line 22)
+INC_DIR = ./includes
+# makefile (from `Makefile', line 27)
+CHECKER_SRCS = ${CHECKER_DIR}/checker.c
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/joaoribeiro
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/joaoribeiro/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+# environment
+LOGNAME = joaoribeiro
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /Users/joaoribeiro/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 44)
+PUSH_SWAP_SRCS := ./push_swap/chunk.c ./push_swap/cost_to_move.c ./push_swap/error.c ./push_swap/push_swap.c ./push_swap/sort1.c ./push_swap/sort2.c ./push_swap/sort3.c ./push_swap/utils.c 
+# makefile (from `Makefile', line 63)
+CC = gcc
+# makefile (from `Makefile', line 54)
+BUILD_DIR = ./build
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = joaoribeiro
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 13)
+NAME = push_swap
+# makefile (from `Makefile', line 23)
+SHARED_DIR = ./shared
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/n7/4jvr5x6d1z79zw6k99qsl2pm0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/joaoribeiro/Library/Application Support/Code/1.68.1-main.sock
+# makefile (from `Makefile', line 18)
+RED = \033[0;31m
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.1941964.1941970
+# automatic
+ 
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 60)
+SHARED_OBJS = $(subst .c,.o,$(subst ${SHARED_DIR},${OBJ_DIR},${SHARED_SRCS}))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x2
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 78072
+# variable set hash-table stats:
+# Load=88/1024=9%, Rehash=0, Collisions=6/162=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# ./push_swap (device 16777220, inode 1900196): 10 files, no impossibilities so far.
+# . (device 16777220, inode 1839111): 11 files, no impossibilities.
+# ./shared (device 16777220, inode 1900422): No files, no impossibilities so far.
+# push_swap (device 16777220, inode 1900196): 10 files, no impossibilities so far.
+
+# 31 files, no impossibilities in 4 directories.
+
+# Implicit Rules
+
+build/obj/%.o: ./push_swap/%.c
+#  commands to execute (from `Makefile', line 76):
+	$(CC) $(CFLAGS) -I${INC_DIR} -c $< -o $@
+	@echo "$(GRNGRN)/$(RST)\c"
+	
+
+build/obj/%.o: ./shared/%.c
+#  commands to execute (from `Makefile', line 80):
+	$(CC) $(CFLAGS) -I${INC_DIR} -c $< -o $@
+	@echo "$(GRNGRN)/$(RST)\c"
+	
+
+# 2 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+build/obj/push.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/lst_add_back.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/rotate.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+exe:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+all: push_swap
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+
+# Not a target:
+build/obj/lst_clear.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: all exe clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/obj/chunk.o: push_swap/chunk.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `chunk'
+#  Last modified 2022-06-12 20:33:01
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 76):
+	$(CC) $(CFLAGS) -I${INC_DIR} -c $< -o $@
+	@echo "$(GRNGRN)/$(RST)\c"
+	
+
+# Not a target:
+build/obj/lst_last.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+push_swap/cost_to_move.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-12 13:22:24
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+build/obj/sort3.o:
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-12 11:11:49
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+build:
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-12 20:33:07
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 84):
+	@mkdir -p ${BUILD_DIR}
+	@mkdir -p ${BIN_DIR}
+	@mkdir -p ${OBJ_DIR}
+	
+
+# Not a target:
+build/obj/reverse.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+push_swap/chunk.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-12 14:04:46
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+build/obj/push_swap.o: push_swap/push_swap.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `push_swap'
+#  Last modified 2022-06-12 20:33:02
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build/obj/push_swap.o
+# automatic
+# % := 
+# automatic
+# * := push_swap
+# automatic
+# + := push_swap/push_swap.c
+# automatic
+# | := 
+# automatic
+# < := push_swap/push_swap.c
+# automatic
+# ^ := push_swap/push_swap.c
+# automatic
+# ? := push_swap/push_swap.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/17=6%
+#  commands to execute (from `Makefile', line 76):
+	$(CC) $(CFLAGS) -I${INC_DIR} -c $< -o $@
+	@echo "$(GRNGRN)/$(RST)\c"
+	
+
+fclean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 93):
+	@rm -rf $(BUILD_DIR)
+	@printf "$(RED)fclean done\e[0m\n"
+	
+
+# Not a target:
+build/obj/lst_delone.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/lst_size.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/lst_new.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/ft_atoi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/obj/error.o: push_swap/error.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `error'
+#  Last modified 2022-06-12 20:33:01
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 76):
+	$(CC) $(CFLAGS) -I${INC_DIR} -c $< -o $@
+	@echo "$(GRNGRN)/$(RST)\c"
+	
+
+# Not a target:
+build/obj/lst_sorted.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/sort1.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/print_list.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+checker:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 70):
+	${CC} ${CFLAGS} ${INCLUDES} ${CHECKER_OBJ} -o ${BIN_DIR}/checker
+	
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 89):
+	@rm -rf $(OBJ_DIR)
+	@printf "\e[31mclean done\e[0m\n"
+	
+
+# Not a target:
+build/obj/lts_add_front.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+push_swap: build | build/obj/chunk.o build/obj/cost_to_move.o build/obj/error.o build/obj/push_swap.o build/obj/sort1.o build/obj/sort2.o build/obj/sort3.o build/obj/utils.o build/obj/ft_atoi.o build/obj/lst_add_back.o build/obj/lst_clear.o build/obj/lst_delone.o build/obj/lst_last.o build/obj/lst_new.o build/obj/lst_size.o build/obj/lst_sorted.o build/obj/lts_add_front.o build/obj/print_list.o build/obj/push.o build/obj/reverse.o build/obj/rotate.o build/obj/swap.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-12 20:35:15
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  commands to execute (from `Makefile', line 73):
+	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) ${SHARED_OBJS} -o $(BIN)
+	
+
+ 
+# Not a target:
+push_swap/push_swap.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-12 20:35:12
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+push_swap/error.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-12 20:01:08
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+build/obj/sort2.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/obj/swap.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/obj/cost_to_move.o: push_swap/cost_to_move.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `cost_to_move'
+#  Last modified 2022-06-12 20:33:01
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 76):
+	$(CC) $(CFLAGS) -I${INC_DIR} -c $< -o $@
+	@echo "$(GRNGRN)/$(RST)\c"
+	
+
+# files hash-table stats:
+# Load=38/1024=4%, Rehash=0, Collisions=8/94=9%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Tue Jun 21 12:49:08 2022
+
+ 

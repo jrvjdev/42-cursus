@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   lst_sorted.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/29 16:35:34 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/11 22:24:18 by joaribei          #+#    #+#             */
+/*   Updated: 2022/06/11 22:24:20 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <readline/readline.h>
-
-# include "malloc.h"
-# include "string.h"
-# include "command.h"
-# include "env.h"
-
-#endif
+int	lst_sorted(t_list *stack_a)
+{
+	while (stack_a->next)
+	{
+		if (stack_a->content > stack_a->next->content)
+			return (0);
+		stack_a = stack_a->next;
+	}
+	return (1);
+}

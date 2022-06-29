@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   lst_clear.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/29 16:35:34 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/02 20:44:50 by joaribei          #+#    #+#             */
+/*   Updated: 2022/06/12 19:42:33 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <readline/readline.h>
+void	lst_clear(t_list **lst)
+{
+	t_list	*temp;
 
-# include "malloc.h"
-# include "string.h"
-# include "command.h"
-# include "env.h"
+	if (!lst || !*lst)
+		return ;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		lst_delone(*lst);
+		*lst = temp;
+	}
+	*lst = NULL;
+}
 
-#endif
+void	lst_clear_all(t_list **lst_a, t_list **lst_b)
+{
+	lst_clear(lst_a);
+	lst_clear(lst_b);
+}

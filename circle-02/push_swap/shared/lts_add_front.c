@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   lts_add_front.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/29 16:35:34 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/10 18:41:57 by joaribei          #+#    #+#             */
+/*   Updated: 2022/06/10 18:47:46 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "shared.h"
 
-# include <stdio.h>
-# include <readline/readline.h>
-
-# include "malloc.h"
-# include "string.h"
-# include "command.h"
-# include "env.h"
-
-#endif
+void	lst_add_front(t_list **lst, t_list *new)
+{
+	if (new && lst)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+}

@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   lst_add_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/29 16:35:34 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/02 20:44:44 by joaribei          #+#    #+#             */
+/*   Updated: 2022/06/11 21:04:03 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <readline/readline.h>
+// void	lst_add_back(t_list **lst, t_list *new)
+// {
+// 	if (lst)
+// 		lst_last(*lst)->next = new;
+// }
 
-# include "malloc.h"
-# include "string.h"
-# include "command.h"
-# include "env.h"
-
-#endif
+void	lst_add_back(t_list **lst, t_list *new)
+{
+	if (!lst)
+		return ;
+	if (!*lst)
+		*lst = new;
+	else
+		lst_last(*lst)->next = new;
+}

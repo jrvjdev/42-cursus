@@ -1,0 +1,52 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/joaoribeiro/Library/Mobile Documents/com~apple~CloudDocs/Projects/42-cursus/circle-02/push_swap'
+mkdir -p ./build
+mkdir -p ./build/bin
+mkdir -p ./build/obj
+gcc -Werror -Wall -Wextra -I./includes -c push_swap/chunk.c -o build/obj/chunk.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c push_swap/cost_to_move.c -o build/obj/cost_to_move.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c push_swap/error.c -o build/obj/error.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c push_swap/push_swap.c -o build/obj/push_swap.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c push_swap/sort1.c -o build/obj/sort1.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c push_swap/sort2.c -o build/obj/sort2.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c push_swap/sort3.c -o build/obj/sort3.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c push_swap/utils.c -o build/obj/utils.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/ft_atoi.c -o build/obj/ft_atoi.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/lst_add_back.c -o build/obj/lst_add_back.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/lst_clear.c -o build/obj/lst_clear.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/lst_delone.c -o build/obj/lst_delone.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/lst_last.c -o build/obj/lst_last.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/lst_new.c -o build/obj/lst_new.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/lst_size.c -o build/obj/lst_size.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/lst_sorted.c -o build/obj/lst_sorted.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/lts_add_front.c -o build/obj/lts_add_front.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/print_list.c -o build/obj/print_list.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/push.c -o build/obj/push.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/reverse.c -o build/obj/reverse.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/rotate.c -o build/obj/rotate.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra -I./includes -c shared/swap.c -o build/obj/swap.o
+echo "\033[38;5;46m/\033[0m\c"
+gcc -Werror -Wall -Wextra ./build/obj/chunk.o ./build/obj/cost_to_move.o ./build/obj/error.o ./build/obj/push_swap.o ./build/obj/sort1.o ./build/obj/sort2.o ./build/obj/sort3.o ./build/obj/utils.o  ./build/obj/ft_atoi.o ./build/obj/lst_add_back.o ./build/obj/lst_clear.o ./build/obj/lst_delone.o ./build/obj/lst_last.o ./build/obj/lst_new.o ./build/obj/lst_size.o ./build/obj/lst_sorted.o ./build/obj/lts_add_front.o ./build/obj/print_list.o ./build/obj/push.o ./build/obj/reverse.o ./build/obj/rotate.o ./build/obj/swap.o  -o ./build/bin/push_swap
+make: Leaving directory `/Users/joaoribeiro/Library/Mobile Documents/com~apple~CloudDocs/Projects/42-cursus/circle-02/push_swap'
+ 

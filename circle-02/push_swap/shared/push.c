@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/29 16:35:34 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/02 20:46:12 by joaribei          #+#    #+#             */
+/*   Updated: 2022/06/10 18:50:08 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <readline/readline.h>
+void	push(t_list **src, t_list **dest, int option)
+{
+	t_list	*cursor;
 
-# include "malloc.h"
-# include "string.h"
-# include "command.h"
-# include "env.h"
-
-#endif
+	cursor = (*src)->next;
+	lst_add_front(dest, (*src));
+	(*src) = cursor;
+	if (option == 1)
+		write(1, "pb\n", 3);
+	if (option == 2)
+		write(1, "pa\n", 3);
+}
