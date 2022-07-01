@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   util_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 13:01:28 by joaribei         ###   ########.fr       */
+/*   Created: 2022/06/25 22:13:37 by joaribei          #+#    #+#             */
+/*   Updated: 2022/07/01 14:32:37 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "../../includes/string.h"
 
-# include <stdio.h>
-# include <readline/readline.h>
-
-# include "string.h"
-# include "command.h"
-# include "env.h"
-
-#endif
+void	_string_cat(char *string, char *to_cat)
+{
+	while (*string)
+		string++;
+	while (*to_cat)
+		*string++ = *to_cat++;
+	*string = '\0';
+}

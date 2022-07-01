@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   malloc.h                                           :+:      :+:    :+:   */
+/*   util_1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 16:33:43 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/21 13:23:17 by joaribei         ###   ########.fr       */
+/*   Created: 2022/07/01 11:01:48 by joaribei          #+#    #+#             */
+/*   Updated: 2022/07/01 12:30:49 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MALLOC_H
-# define MALLOC_H
+#include "../../includes/char.h"
 
-# include <stdlib.h>
-
-typedef struct s_malloc
+int	_is_lowercase(int c)
 {
-	void			*ptr;
-	struct s_malloc	*next;
-	struct s_malloc	*prev;
-}	t_malloc;
+	return (c >= 'a' && c <= 'z');
+}
 
-void	*new_malloc(size_t __size);
-int		free_malloc(void *ptr);
-void	free_all_malloc(void);
+int	_is_uppercase(int c)
+{
+	return (c >= 'A' && c <= 'Z');
+}
 
-#endif
+int	_is_alpha(int c)
+{
+	return (_is_uppercase(c) || _is_lowercase(c));
+}
+
+int	_is_whitespace(int c)
+{
+	return ((c >= '\t' && c <= '\r') || c == ' ');
+}

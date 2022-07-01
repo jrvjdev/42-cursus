@@ -5,34 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 22:28:36 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/28 21:31:22 by joaribei         ###   ########.fr       */
+/*   Created: 2022/07/01 08:19:04 by joaribei          #+#    #+#             */
+/*   Updated: 2022/07/01 12:20:34 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/command.h"
 
-void	command_cd(void)
+int	_names(char	*name)
 {
-	printf("cd\n");
+	unsigned long	index;
+	static char		_names[7][10] = {
+		"cd",
+		"env",
+		"pwd",
+		"echo",
+		"exit",
+		"unset",
+		"export",
+	};
+
+	index = 0;
+	while (index < (sizeof(_names) / sizeof(*_names)))
+	{
+		if (_string().equals(name, _names[index]) > 0)
+			return (index);
+		index++;
+	}
+	return (-1);
 }
 
-void	command_env(void)
+t_function	_functions(int index)
 {
-	printf("env\n");
-}
+	static t_function	functions[7] = {
+		command_cd,
+		command_env,
+		command_pwd,
+		command_echo,
+		command_exit,
+		command_unset,
+		command_export
+	};
 
-void	command_pwd(void)
-{
-	printf("pwd\n");
-}
-
-void	command_echo(void)
-{
-	printf("echo\n");
-}
-
-void	command_exit(void)
-{
-	printf("exit\n");
+	return (functions[index]);
 }

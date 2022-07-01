@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 21:57:32 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/28 22:57:45 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:23:53 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_hashmap	*get_env(char *key)
 	env = *_env();
 	while (env)
 	{
-		if (string().equals(env->hashmap->key, key))
+		if (_string().equals(env->hashmap->key, key))
 			return (env->hashmap);
 		env = env->next;
 	}
@@ -41,7 +41,7 @@ void	init_env(t_hashmap *hashmap)
 	env = _env();
 	if (!*env)
 	{
-		(*env) = (t_env *)malloc(sizeof(t_env));
+		(*env) = (t_env *)_memory().malloc(sizeof(t_env));
 		(*env)->hashmap = hashmap;
 		(*env)->next = NULL;
 	}
@@ -49,7 +49,7 @@ void	init_env(t_hashmap *hashmap)
 	{
 		while ((*env)->next)
 			env = &(*env)->next;
-		(*env)->next = (t_env *)malloc(sizeof(t_env));
+		(*env)->next = (t_env *)_memory().malloc(sizeof(t_env));
 		(*env)->next->hashmap = hashmap;
 		(*env)->next->next = NULL;
 	}

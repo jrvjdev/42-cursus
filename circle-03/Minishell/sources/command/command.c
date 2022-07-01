@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:20:16 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 10:07:46 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:25:46 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ t_command	**_command(int option)
 		return (&last);
 	return (&first);
 }
-
-ls | grep makefile
-output &> grep makefile
-
-
 
 void	add_command(t_command **new_command)
 {
@@ -61,6 +56,6 @@ void	execute_command(void)
 		(*_command(1)) = (*_command(0));
 		(*_command(0)) = (*_command(0))->next;
 		(*(*_command(1))->functions)();
-		free_malloc((*_command(1)));
+		_memory().free((*_command(1)));
 	}
 }

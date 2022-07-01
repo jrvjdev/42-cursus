@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:35:24 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 10:42:55 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/01 14:35:31 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define STRING_H
 
 # include <unistd.h>
-# include "malloc.h"
+
+# include "char.h"
+# include "memory.h"
 
 typedef struct s_hashmap
 {
@@ -24,28 +26,39 @@ typedef struct s_hashmap
 
 typedef struct s_string
 {
-	int		(*length)(char *string);
+	size_t	(*length)(char *string);
 	int		(*equals)(char *string_1, char *string_2);
 	int		(*contains)(char *string_1, char *string_2);
 	int		(*index_of)(char *string_1, char *string_2);
 	int		(*beginning_equals)(char *string_1, char *string_2);
+	void	(*copy)(char *dst, char *src);
+	void	(*cat)(char *string, char *to_cat);
+	void	(*copy_at)(char *dst, char *src, size_t size);
+	char	*(*dup)(const char *string);
+	char	*(*dup_at)(const char *string, size_t size);
 	char	**(*split_char)(char *string, char separator);
 	char	**(*split_string)(char *string, char *separator);
-	char	*(*dup)(const char *string);
 }	t_string;
 
-t_string	string(void);
+t_string	_string(void);
 
-int			length(char *string);
-int			equals(char *string_1, char *string_2);
-int			contains(char *string_1, char *string_2);
-int			index_of(char *string_1, char *string_2);
-int			beginning_equals(char *string_1, char *string_2);
+size_t		_string_length(char *string);
 
-char		**split_char(char *string, char separator);
-char		**split_string(char *string, char *separator);
-char		*dup(const char *string);
+int			_string_equals(char *string_1, char *string_2);
+int			_string_contains(char *string_1, char *string_2);
+int			_string_index_of(char *string_1, char *string_2);
+int			_string_beginning_equals(char *string_1, char *string_2);
 
-t_hashmap	*new_hashmap(char *string);
+char		*_string_dup(const char *string);
+char		*_string_dup_at(const char *string, size_t size);
+
+void		_string_copy(char *dst, char *src);
+void		_string_cat(char *string, char *to_cat);
+void		_string_copy_at(char *dst, char *src, size_t size);
+
+char		**_string_split_char(char *string, char separator);
+char		**_string_split_string(char *string, char *separator);
+
+t_hashmap	*_string_new_hashmap(char *string);
 
 #endif

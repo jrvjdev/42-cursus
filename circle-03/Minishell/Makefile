@@ -6,7 +6,7 @@
 #    By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/01 08:20:14 by joaribei         ###   ########.fr        #
+#    Updated: 2022/07/01 14:36:43 by joaribei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,16 +24,24 @@ INC_DIR = ./includes
 SRC_DIR = ./sources
 
 SRCS =	${SRC_DIR}/minishell.c \
-		${SRC_DIR}/memory/malloc.c \
-		${SRC_DIR}/env/env.c \
+		${SRC_DIR}/char/char.c \
+		${SRC_DIR}/char/util_1.c \
+		${SRC_DIR}/char/util_2.c \
 		${SRC_DIR}/command/command.c \
-		${SRC_DIR}/command/util_0.c \
 		${SRC_DIR}/command/util_1.c \
 		${SRC_DIR}/command/util_2.c \
+		${SRC_DIR}/command/util_3.c \
+		${SRC_DIR}/env/env.c \
+		${SRC_DIR}/memory/memory.c \
+		${SRC_DIR}/memory/util_1.c \
+		${SRC_DIR}/memory/util_2.c \
+		${SRC_DIR}/memory/util_3.c \
 		${SRC_DIR}/string/string.c \
 		${SRC_DIR}/string/util_1.c \
 		${SRC_DIR}/string/util_2.c \
 		${SRC_DIR}/string/util_3.c \
+		${SRC_DIR}/string/util_4.c \
+		${SRC_DIR}/string/util_5.c \
 
 # Variables for path of object files and binary targets
 BUILD_DIR = ./build

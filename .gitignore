@@ -24,3 +24,6 @@
 
 # Ignore code-workspaces
 *.code-workspace
+
+#
+**/build/*
