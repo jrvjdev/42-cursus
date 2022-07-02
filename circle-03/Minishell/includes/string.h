@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:35:24 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 14:35:31 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/02 11:33:44 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_string
 	void	(*copy)(char *dst, char *src);
 	void	(*cat)(char *string, char *to_cat);
 	void	(*copy_at)(char *dst, char *src, size_t size);
+	char	*(*itoa)(int n);
 	char	*(*dup)(const char *string);
 	char	*(*dup_at)(const char *string, size_t size);
 	char	**(*split_char)(char *string, char separator);
@@ -49,6 +50,7 @@ int			_string_contains(char *string_1, char *string_2);
 int			_string_index_of(char *string_1, char *string_2);
 int			_string_beginning_equals(char *string_1, char *string_2);
 
+char		*_string_itoa(int n);
 char		*_string_dup(const char *string);
 char		*_string_dup_at(const char *string, size_t size);
 

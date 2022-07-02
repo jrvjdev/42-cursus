@@ -6,7 +6,7 @@
 #    By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/01 14:36:43 by joaribei         ###   ########.fr        #
+#    Updated: 2022/07/02 11:34:12 by joaribei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRCS =	${SRC_DIR}/minishell.c \
 		${SRC_DIR}/string/util_3.c \
 		${SRC_DIR}/string/util_4.c \
 		${SRC_DIR}/string/util_5.c \
+		${SRC_DIR}/string/util_6.c \
 
 # Variables for path of object files and binary targets
 BUILD_DIR = ./build
