@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:39 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 11:59:17 by V                ###   ########.fr       */
+/*   Updated: 2022/07/02 22:08:13 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ int	main(int ac, char **av, char **env)
 		line = readline(ft_prompt());
 		if (_string().equals(line, "exit"))
 			break;
+		if (_string().length(line) == 0)
+			continue;
+		else
+			add_history(line);
 		(cmds) = buffer_into_array(line);
 		print_arrays(cmds);
-
 		while (*cmds)
 		{
 			name = _names(*cmds);
