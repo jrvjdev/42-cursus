@@ -1,4 +1,4 @@
-#include "../include/minishell.h"
+#include "../includes/parse.h"
 
 void	ft_dquote(char **output, char c)
 {
@@ -10,8 +10,8 @@ void	ft_dquote(char **output, char c)
 	buff = readline("dquote> ");
 	add_history(buff);
 	tmp = ft_strdup(buff);
-	ft_stradd(&(*output), tmp);
-	i += ft_strcount_char(tmp, c);
+	_stradd(&(*output), tmp);
+	i += _strcount_char(tmp, c);
 	if (i % 2 != 0)
 		ft_dquote(output, c);
 }

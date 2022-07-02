@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+         #
+#    By: V <V@student.42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/01 14:36:43 by joaribei         ###   ########.fr        #
+#    Updated: 2022/07/02 11:06:12 by V                ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,15 @@ SRCS =	${SRC_DIR}/minishell.c \
 		${SRC_DIR}/string/util_3.c \
 		${SRC_DIR}/string/util_4.c \
 		${SRC_DIR}/string/util_5.c \
+		${SRC_DIR}/string/util_6.c \
+		${SRC_DIR}/parse/dquote.c \
+		${SRC_DIR}/parse/parse.c \
+		${SRC_DIR}/parse/util_array.c \
+		${SRC_DIR}/parse/util_debuging.c \
+		${SRC_DIR}/parse/util_parse.c \
+		${SRC_DIR}/parse/util_str.c \
+		${SRC_DIR}/parse/util_str.c \
+		${SRC_DIR}/static/shell.c \
 
 # Variables for path of object files and binary targets
 BUILD_DIR = ./build

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:35:24 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 14:35:31 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/02 11:26:24 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define STRING_H
 
 # include <unistd.h>
+# include <stdbool.h>
 
 # include "char.h"
 # include "memory.h"
@@ -38,12 +39,14 @@ typedef struct s_string
 	char	*(*dup_at)(const char *string, size_t size);
 	char	**(*split_char)(char *string, char separator);
 	char	**(*split_string)(char *string, char *separator);
+	char	*(*itoa)(int n);
 }	t_string;
 
 t_string	_string(void);
 
 size_t		_string_length(char *string);
-
+bool		_isquote(char c);
+char		*itoa(int nb);
 int			_string_equals(char *string_1, char *string_2);
 int			_string_contains(char *string_1, char *string_2);
 int			_string_index_of(char *string_1, char *string_2);

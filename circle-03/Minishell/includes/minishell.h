@@ -3,21 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 13:01:28 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/02 10:58:58 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
+# include <stdbool.h>
 # include <stdio.h>
 # include <readline/readline.h>
 
 # include "string.h"
 # include "command.h"
 # include "env.h"
+# include "parse.h"
+# include "static.h"
 
 #endif

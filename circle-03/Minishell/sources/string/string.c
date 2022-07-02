@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:10:15 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 14:36:04 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/02 11:22:43 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ t_string	_string(void)
 		_string_dup,
 		_string_dup_at,
 		_string_split_char,
-		_string_split_string
+		_string_split_string,
+		_string_itoa
 	};
 
 	return (_string);
