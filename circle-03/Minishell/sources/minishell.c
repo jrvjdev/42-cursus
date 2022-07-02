@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:39 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 11:43:19 by V                ###   ########.fr       */
+/*   Updated: 2022/07/02 11:59:17 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av, char **env)
 	(void)env;
 	// printf("%i\n", _char().is_whitespace('	'));
 
-	// int		name;
+	int		name;
 	char	*line;
 	char	**cmds;
 
@@ -30,23 +30,23 @@ int	main(int ac, char **av, char **env)
 	// 	init_env(new_hashmap(*env++));
 	while (1)
 	{
-		line = readline("$> ");
+		line = readline(ft_prompt());
 		if (_string().equals(line, "exit"))
 			break;
 		(cmds) = buffer_into_array(line);
 		print_arrays(cmds);
-		
-		// while (*cmds)
-		// {
-		// 	name = _names(*cmds);
-		// 	if (name >= 0)
-		// 		init_command(*cmds, _functions(name)); //to-do     
-		// 	else
-		// 	{
-		// 		///accessee8)
-		// 	}
-		// 	cmds++;
-		// }
+
+		while (*cmds)
+		{
+			name = _names(*cmds);
+			if (name >= 0)
+				init_command(*cmds, _functions(name)); //to-do     
+			else
+			{
+				///accessee8)
+			}
+			cmds++;
+		}
 		execute_command();
 		free(line);
 		// free_arrays(cmds);

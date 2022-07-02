@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 10:58:58 by V                ###   ########.fr       */
+/*   Updated: 2022/07/02 11:49:12 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "command.h"
 # include "env.h"
 # include "parse.h"
+# include "prompt.h"
 # include "static.h"
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:35:24 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 11:40:15 by V                ###   ########.fr       */
+/*   Updated: 2022/07/02 11:46:05 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ typedef struct s_string
 	char	**(*split_string)(char *string, char *separator);
 }	t_string;
 
-bool		_isquote(char c);
 t_string	_string(void);
 
 size_t		_string_length(char *string);
@@ -62,4 +61,6 @@ char		**_string_split_string(char *string, char *separator);
 
 t_hashmap	*_string_new_hashmap(char *string);
 
+//added
+bool		_isquote(char c);
 #endif

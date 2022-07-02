@@ -13,9 +13,9 @@ static char	*buffer_quotes(char **buff, char c, char *str, int i)
 static char	*buffer_scan_for_quotes(char *str)
 {
 	int		i; 
-	int		f; //first occurance for finding c
-	char	c; //c if ' or "
-	char	k; //count c
+	int		f;
+	char	c;
+	char	k;
 
 	f = 0;
 	k = 0;

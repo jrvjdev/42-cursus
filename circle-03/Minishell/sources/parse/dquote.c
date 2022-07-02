@@ -6,7 +6,7 @@ void	ft_dquote(char **output, char c)
 	char	*tmp;
 	int		i;
 
-	i = 1; //flag: we have already 1 ", we need an even number of "
+	i = 1;
 	buff = readline("dquote> ");
 	add_history(buff);
 	tmp = _string().dup(buff);

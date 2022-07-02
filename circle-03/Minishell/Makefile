@@ -6,7 +6,7 @@
 #    By: V <V@student.42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/02 11:06:12 by V                ###   ########.fr        #
+#    Updated: 2022/07/02 11:52:06 by V                ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRCS =	${SRC_DIR}/minishell.c \
 		${SRC_DIR}/parse/util_str.c \
 		${SRC_DIR}/parse/util_str.c \
 		${SRC_DIR}/static/shell.c \
+		${SRC_DIR}/prompt/prompt.c \
 
 # Variables for path of object files and binary targets
 BUILD_DIR = ./build

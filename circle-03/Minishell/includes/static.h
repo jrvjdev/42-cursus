@@ -5,8 +5,7 @@
 
 typedef struct	s_token
 {
-	char			*cmds;
-	char			**args;
+	char			**args; //args[0] = cmd, args[...]  = arguments 
 	struct s_token	*next;
 }				t_token;
 
