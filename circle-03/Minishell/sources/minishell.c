@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:39 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 10:52:35 by V                ###   ########.fr       */
+/*   Updated: 2022/07/02 11:43:19 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	main(int ac, char **av, char **env)
 		if (_string().equals(line, "exit"))
 			break;
 		(cmds) = buffer_into_array(line);
-
+		print_arrays(cmds);
+		
 		// while (*cmds)
 		// {
 		// 	name = _names(*cmds);

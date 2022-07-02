@@ -1,6 +1,8 @@
 #ifndef STATIC_H
 # define STATIC_H
 
+# include "string.h"
+
 typedef struct	s_token
 {
 	char			*cmds;

@@ -9,7 +9,7 @@ void	ft_dquote(char **output, char c)
 	i = 1; //flag: we have already 1 ", we need an even number of "
 	buff = readline("dquote> ");
 	add_history(buff);
-	tmp = ft_strdup(buff);
+	tmp = _string().dup(buff);
 	_stradd(&(*output), tmp);
 	i += _strcount_char(tmp, c);
 	if (i % 2 != 0)

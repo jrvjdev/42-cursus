@@ -81,7 +81,7 @@ char	**buffer_into_array(char *str)
 	{
 		while (_char().is_whitespace(*str))
 			str++;
-		if (!str)
+		if (!str || _string().length(str) == 0)
 			break;
 		a[i++] = _string().dup(buffer_to_string(&str)); //printf("a copied %s\n", a[i - 1]);
 	}

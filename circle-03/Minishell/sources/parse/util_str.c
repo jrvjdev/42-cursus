@@ -9,7 +9,7 @@ void	_stradd(char **str, char *add)
   i = 0;
   while ((*str)[i])
     i++;
-  (*str) = realloc((*str), ft_strlen(*str) + ft_strlen(add) + 1);
+  (*str) = realloc((*str), _string().length(*str) + _string().length(add) + 1);
   while (*add)
   {
     (*str)[i++] = *add;

@@ -1,5 +1,6 @@
 #include "../includes/minishell.h"
 
+/*
 char		*parse_var_env(char *str) //returns $PWD into (User/v/Home)
 {
 	t_hashmap	*lst;
@@ -96,3 +97,5 @@ char	*parse_array(char *str)
 	}
 	return (out);
 }
+
+*/

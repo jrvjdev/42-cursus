@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:10:15 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 11:22:43 by V                ###   ########.fr       */
+/*   Updated: 2022/07/02 11:40:13 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_string	_string(void)
 		_string_dup_at,
 		_string_split_char,
 		_string_split_string,
-		_string_itoa
 	};
 
 	return (_string);
