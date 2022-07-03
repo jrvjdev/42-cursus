@@ -11,5 +11,7 @@ char	**buffer_into_array(char *str);
 void	ft_dquote(char **output, char c);
 void	free_arrays(char **arr); //this can go
 
+char	*parse_array(char *str);
 void	print_arrays(char **a);
+
 #endif

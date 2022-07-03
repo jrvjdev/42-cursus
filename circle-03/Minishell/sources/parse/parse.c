@@ -83,7 +83,8 @@ char	**buffer_into_array(char *str)
 			str++;
 		if (!str || _string().length(str) == 0)
 			break;
-		a[i++] = _string().dup(buffer_to_string(&str)); //printf("a copied %s\n", a[i - 1]);
+		// a[i++] = _string().dup(buffer_to_string(&str)); //printf("a copied %s\n", a[i - 1]);
+		a[i++] = parse_array(buffer_to_string(&str)); //printf("a copied %s\n", a[i - 1]);
 	}
 	a[i] = 0;
 	return(a);

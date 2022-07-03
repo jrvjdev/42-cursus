@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:39 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 22:08:13 by V                ###   ########.fr       */
+/*   Updated: 2022/07/03 12:07:54 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int	main(int ac, char **av, char **env)
 	(void)av;
 	(void)env;
 	// printf("%i\n", _char().is_whitespace('	'));
+
+	// char str[]="all this way";
+	// printf("new =%s\n", _string_dup_at(str, 5));
+	
 
 	int		name;
 	char	*line;
