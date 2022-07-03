@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:35:24 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 11:33:44 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:47:53 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define STRING_H
 
 # include <unistd.h>
+# include <stdbool.h>
 
 # include "char.h"
 # include "memory.h"
@@ -39,12 +40,12 @@ typedef struct s_string
 	char	*(*dup_at)(const char *string, size_t size);
 	char	**(*split_char)(char *string, char separator);
 	char	**(*split_string)(char *string, char *separator);
+	bool	(*isquote)(char c);
 }	t_string;
 
 t_string	_string(void);
 
 size_t		_string_length(char *string);
-
 int			_string_equals(char *string_1, char *string_2);
 int			_string_contains(char *string_1, char *string_2);
 int			_string_index_of(char *string_1, char *string_2);
@@ -61,6 +62,10 @@ void		_string_copy_at(char *dst, char *src, size_t size);
 char		**_string_split_char(char *string, char separator);
 char		**_string_split_string(char *string, char *separator);
 
+char		*_string_itoa(int n);
+
 t_hashmap	*_string_new_hashmap(char *string);
+
+bool		_string_isquote(char c); // ' "
 
 #endif

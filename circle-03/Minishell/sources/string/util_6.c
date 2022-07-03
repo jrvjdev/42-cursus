@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:13:37 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 11:36:09 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:46:36 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ char	*_string_itoa(int n)
 	str = _memory().calloc((index + 1), sizeof(char));
 	(_string().copy)(str, ptr);
 	return (str);
+}
+
+bool	_string_isquote(char c)
+{
+	if (c == '\'' || c == '"')
+		return (true);
+	return (false);
 }

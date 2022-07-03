@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:18:59 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 07:52:59 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/03 12:23:19 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef void	(*t_function)(void);
 
 typedef struct s_command
 {
+	int					cmd;
 	int					fd[2];
 	char				*name;
 	t_function			functions;

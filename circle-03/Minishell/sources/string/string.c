@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:10:15 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 10:28:35 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:48:19 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ t_string	_string(void)
 		_string_dup,
 		_string_dup_at,
 		_string_split_char,
-		_string_split_string
+		_string_split_string,
+		_string_isquote
 	};
 
 	return (_string);
