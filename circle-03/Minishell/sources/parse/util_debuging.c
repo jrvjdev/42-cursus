@@ -1,5 +1,6 @@
 #include "../includes/minishell.h"
 /* FOR DEBUGGING */
+
 void	print_arrays(char **a)
 {
   int i;
@@ -8,4 +9,3 @@ void	print_arrays(char **a)
 	while(a[i])
 	  printf("%s\n", a[i++]);
 }
-

@@ -1,5 +1,8 @@
 #include "../includes/minishell.h"
 
+//this can be delete
+
+
 void	free_str(char *str)
 {
 	// printf("free_str:%s\n", str);

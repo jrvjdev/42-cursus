@@ -1,6 +1,7 @@
 #include "../includes/minishell.h"
 
 /*
+
 char		*parse_var_env(char *str) //returns $PWD into (User/v/Home)
 {
 	t_hashmap	*lst;
@@ -26,25 +27,25 @@ void	dollar_for_money(char **out, char **str)
 	i = _string().length(*out);
 	j = 0;
 	(*str)++;
-	if (**str == '?')
+	if (**str == '?') //get exit code
 	{
 		(*str)++;
 		tmp = ft_itoa(get_shell()->ec);
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}
-	else
+	else //check for envp and valiadte no $$ || $"look"
 	{
 		while ((*str)[j] != '$' && !_char().is_whitespace((*str)[j]) && !_isquote((*str)[j]) && (*str)[j])
 			j++;
-		tmp = ft_strldup(*str, j);
+		tmp = ft_strldup(*str, j); //copy until j
 		(*str) += j;
 		tmp = parse_var_env(tmp);
 		j = 0;
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}
-	// printf("OUT1 is %s\n", *out);
+	// printf("OUTPUT is %s\n", *out);
 }
 
 void	ft_squote(char **out, char **str)
