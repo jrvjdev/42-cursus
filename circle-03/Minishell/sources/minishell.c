@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:39 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/03 12:07:54 by V                ###   ########.fr       */
+/*   Updated: 2022/07/03 12:01:15 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(int ac, char **av, char **env)
 			}
 			cmds++;
 		}
-		execute_command();
+		// execute_command();
 		free(line);
 		// free_arrays(cmds);
 	}
@@ -87,3 +87,4 @@ int	main(int ac, char **av, char **env)
 // 	_memory().free(str);
 // 	return (0);
 // }
+

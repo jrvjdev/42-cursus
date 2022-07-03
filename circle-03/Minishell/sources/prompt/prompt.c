@@ -40,9 +40,9 @@ char	*ft_prompt(void)
 {
 	char	*str;
 	char	prompt[255];
-	int		status; //statuc of last command, if SUCCESS green, if failer RED, if -1 BLACK
+	// int		status; //statuc of last command, if SUCCESS green, if failer RED, if -1 BLACK
 
-	status = 0; //get_shell()->ec;
+	// status = 0; //get_shell()->ec;
 	str = getcwd(prompt, sizeof(prompt));
 	while (*str)
 		str++;

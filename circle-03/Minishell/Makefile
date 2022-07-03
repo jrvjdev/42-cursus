@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: V <V@student.42.fr>                        +#+  +:+       +#+         #
+#    By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/02 21:48:46 by V                ###   ########.fr        #
+#    Updated: 2022/07/03 11:38:57 by joaribei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,6 @@ SRCS =	${SRC_DIR}/minishell.c \
 		${SRC_DIR}/parse/util_array.c \
 		${SRC_DIR}/parse/util_debuging.c \
 		${SRC_DIR}/parse/util_parse.c \
-		${SRC_DIR}/parse/util_str.c \
 		${SRC_DIR}/parse/util_str.c \
 		${SRC_DIR}/static/shell.c \
 		${SRC_DIR}/prompt/prompt.c \

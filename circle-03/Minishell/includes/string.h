@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:35:24 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 11:46:05 by V                ###   ########.fr       */
+/*   Updated: 2022/07/03 11:47:53 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ typedef struct s_string
 	void	(*copy)(char *dst, char *src);
 	void	(*cat)(char *string, char *to_cat);
 	void	(*copy_at)(char *dst, char *src, size_t size);
+	char	*(*_string_itoa)(int n);
 	char	*(*dup)(const char *string);
 	char	*(*dup_at)(const char *string, size_t size);
 	char	**(*split_char)(char *string, char separator);
 	char	**(*split_string)(char *string, char *separator);
+	bool	(*isquote)(char c);
 }	t_string;
 
 t_string	_string(void);
@@ -59,8 +61,10 @@ void		_string_copy_at(char *dst, char *src, size_t size);
 char		**_string_split_char(char *string, char separator);
 char		**_string_split_string(char *string, char *separator);
 
+char		*_string_itoa(int n);
+
 t_hashmap	*_string_new_hashmap(char *string);
 
-//added
-bool		_isquote(char c);
+bool		_string_isquote(char c); // ' "
+
 #endif

@@ -10,9 +10,7 @@ char		*parse_var_env(char *str) //returns $PWD into (User/v/Home)
 		// printf("Search |%s|%s|\n", str, lst->name);
 		if (_string().equals(str, lst->key))
 			return (lst->value);
-		else
-			break;
-		// lst = lst->next; NOT A LINK LIST
+		// lst = lst->next; //NOT A LINK LIST
 	}
 	return ("");
 }
@@ -31,13 +29,13 @@ void	dollar_for_money(char **out, char **str)
 	if (**str == '?') //get exit code
 	{
 		(*str)++;
-		// tmp = ft_itoa(get_shell()->ec);
+		tmp = _string()._string_itoa(get_shell()->ec);
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}
 	else //check for envp and valiadte no $$ || $"look" (TO-DO function)
 	{
-		while ((*str)[j] != '$' && !_char().is_whitespace((*str)[j]) && !_isquote((*str)[j]) && (*str)[j])
+		while ((*str)[j] != '$' && !_char().is_whitespace((*str)[j]) && !_string().isquote((*str)[j]) && (*str)[j])
 			j++;
 		tmp = _string_dup_at(*str, j); //copy until j
 		// tmp = ft_strldup(*str, j); //copy until j
@@ -83,7 +81,7 @@ char	*parse_array(char *str)
 	char	*out;
 	int 	i;
 
-	out = malloc(sizeof(char) * 400); //we dunno what the potential size can be
+	out = _memory().malloc(sizeof(char) * 400); //we dunno what the potential size can be
 	i = 0;
 	while (*str)
 	{
