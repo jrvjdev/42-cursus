@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/02 21:52:27 by V                ###   ########.fr       */
+/*   Updated: 2022/07/04 12:58:01 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@
 # include "parse.h"
 # include "prompt.h"
 # include "static.h"
+# include "termios.h"
 
 #endif
