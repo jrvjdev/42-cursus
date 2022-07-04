@@ -29,7 +29,7 @@ void	dollar_for_money(char **out, char **str)
 	if (**str == '?') //get exit code
 	{
 		(*str)++;
-		tmp = _string()._string_itoa(get_shell()->ec);
+		tmp = _string().itoa(get_shell()->ec);
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}

@@ -59,6 +59,7 @@ int	main(int ac, char **av, char **env)
 		free(line);
 		// free_arrays(cmds);
 	}
+}
 // int	main(int ac, char **av, char **env)
 // {
 // 	(void)ac;
