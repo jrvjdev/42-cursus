@@ -32,6 +32,7 @@ int	main(int ac, char **av, char **env)
 	(void)av;
 	// while (*env)
 	// 	init_env(new_hashmap(*env++));
+	//init_termios();
 	while (1)
 	{
 		line = readline(ft_prompt());
@@ -58,7 +59,6 @@ int	main(int ac, char **av, char **env)
 		free(line);
 		// free_arrays(cmds);
 	}
-=======
 // int	main(int ac, char **av, char **env)
 // {
 // 	(void)ac;
@@ -116,13 +116,14 @@ int	main(int ac, char **av, char **env)
 // 	return (0);
 // }
 
-int	main(void)
-{
-	char	*str = _string().itoa(-123);
 
-	printf("%s\n", str);
-	return (0);
-}
+//int	main(void)
+//{
+//	char	*str = _string().itoa(-123);
+//
+//	printf("%s\n", str);
+//	return (0);
+//}
 
 // #include <stdio.h>
 // #include <stdlib.h>
