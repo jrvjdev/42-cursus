@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+         #
+#    By: V <V@student.42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/03 11:38:57 by joaribei         ###   ########.fr        #
+#    Updated: 2022/07/04 12:58:33 by V                ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRCS =	${SRC_DIR}/minishell.c \
 		${SRC_DIR}/parse/util_str.c \
 		${SRC_DIR}/static/shell.c \
 		${SRC_DIR}/prompt/prompt.c \
+		${SRC_DIR}/termios/termios.c \
 
 # Variables for path of object files and binary targets
 BUILD_DIR = ./build

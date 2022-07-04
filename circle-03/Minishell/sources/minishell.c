@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:39 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/03 12:01:15 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/04 12:57:07 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int ac, char **av, char **env)
 	(void)av;
 	// while (*env)
 	// 	init_env(new_hashmap(*env++));
+	init_termios();
 	while (1)
 	{
 		line = readline(ft_prompt());
@@ -58,7 +59,7 @@ int	main(int ac, char **av, char **env)
 		free(line);
 		// free_arrays(cmds);
 	}
-=======
+}
 // int	main(int ac, char **av, char **env)
 // {
 // 	(void)ac;
@@ -116,13 +117,14 @@ int	main(int ac, char **av, char **env)
 // 	return (0);
 // }
 
-int	main(void)
-{
-	char	*str = _string().itoa(-123);
 
-	printf("%s\n", str);
-	return (0);
-}
+//int	main(void)
+//{
+//	char	*str = _string().itoa(-123);
+//
+//	printf("%s\n", str);
+//	return (0);
+//}
 
 // #include <stdio.h>
 // #include <stdlib.h>
