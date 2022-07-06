@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:39 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/06 00:19:20 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/06 20:42:08 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	main(int ac, char **av, char **env)
 	char	**cmds;
 
 	(void)av;
-	(void)env;
 	if (ac != 1)
 		return (0);
 	while (*env)
 		init_env(_string_new_hashmap(*env++));
+	init_termios();
 	while (1)
 	{
 		line = readline(ft_prompt());

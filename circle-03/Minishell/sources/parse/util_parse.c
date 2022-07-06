@@ -16,14 +16,14 @@ void	dollar_for_money(char **out, char **str)
 	j = 0;
 	(*str)++;
 	tmp = NULL;
-	if (**str == '?') //get exit code
+	if (**str == '?')
 	{
 		(*str)++;
 		tmp = _string().itoa(get_shell()->ec); 
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}
-	else //check for envp and valiadte no $$ || $"look"
+	else
 	{
 		while ((*str)[j] != '$' && !_char().is_whitespace((*str)[j]) && !_string().isquote((*str)[j]) && (*str)[j])
 			j++;
@@ -55,7 +55,7 @@ void	ft_db_quote(char **out, char **str)
 	while (**str != '"' && **str)
 	{
 		i = _string().length(*out);
-		if (**str == '$' && (**str + 1 != '\'' || **str + 1 != '"')) //edge case
+		if (**str == '$' && (**str + 1 != '\'' || **str + 1 != '"'))
 			dollar_for_money(out, str);
 		else
 			(*out)[i] = *(*str)++;
@@ -64,10 +64,10 @@ void	ft_db_quote(char **out, char **str)
 
 char	*parse_array(char *str)
 {
+	int		i;
 	char	*out;
-	int 	i;
 
-	out = _memory().malloc(sizeof(char) * 400); //we dunno what the potential size can be
+	out = _memory().malloc(sizeof(char) * 400);
 	i = 0;
 	while (*str)
 	{
