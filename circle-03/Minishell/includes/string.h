@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 19:35:24 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/03 11:47:53 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/05 17:17:15 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,3 +69,4 @@ t_hashmap	*_string_new_hashmap(char *string);
 bool		_string_isquote(char c); // ' "
 
 #endif
+

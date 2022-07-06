@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 16:33:26 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 14:10:50 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/05 02:42:59 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ t_malloc	**__malloc(int option)
 void	_memory_add_maloc(t_malloc **new_malloc)
 {
 	if (!(*__malloc(0)))
+	{
 		(*__malloc(0)) = (*new_malloc);
+	}
 	else
 	{
 		(*__malloc(1)) = (*__malloc(0));
@@ -60,6 +62,8 @@ int	_memory_free(void *ptr)
 		}
 		else if (!(*__malloc(1))->prev)
 			(*__malloc(0)) = (*__malloc(0))->next;
+		else if (!(*__malloc(1))->next)
+			(*__malloc(1))->prev->next = NULL;
 		free((*__malloc(1)));
 	}
 	return (0);
