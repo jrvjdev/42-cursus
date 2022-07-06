@@ -6,7 +6,7 @@
 #    By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/03 11:38:57 by joaribei         ###   ########.fr        #
+#    Updated: 2022/07/06 20:23:54 by joaribei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS =	${SRC_DIR}/minishell.c \
 		${SRC_DIR}/command/util_1.c \
 		${SRC_DIR}/command/util_2.c \
 		${SRC_DIR}/command/util_3.c \
+		${SRC_DIR}/command/util_4.c \
 		${SRC_DIR}/env/env.c \
 		${SRC_DIR}/memory/memory.c \
 		${SRC_DIR}/memory/util_1.c \

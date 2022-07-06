@@ -40,13 +40,13 @@ static char	*buffer_to_string(char **buff)
 	char	*str;
 	int		i;
 
-	str = _memory().malloc(sizeof(char) * _string().length(*buff) + 1);
+	str = _memory().malloc(sizeof(char) * (_string().length(*buff) + 1));
 	i = 0;
 	while (**buff)
 	{
 		i = _string().length(str);
 		if (_char().is_whitespace(**buff))
-			break;
+			break ;
 		if ((**buff == '<' || **buff == '>' || **buff == '|'))
 		{
 			if (i != 0)
@@ -82,8 +82,8 @@ char	**buffer_into_array(char *str)
 		while (_char().is_whitespace(*str))
 			str++;
 		if (!str || _string().length(str) == 0)
-			break;
-		a[i++] = _string().dup(buffer_to_string(&str)); //printf("a copied %s\n", a[i - 1]);
+			break ;
+		a[i++] = _string().dup(buffer_to_string(&str));
 		// a[i++] = parse_array(buffer_to_string(&str)); //printf("a copied %s\n", a[i - 1]);
 	}
 	a[i] = 0;

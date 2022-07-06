@@ -2,17 +2,7 @@
 
 char		*parse_var_env(char *str) //returns $PWD into (User/v/Home)
 {
-	t_hashmap	*lst;
-
-	lst = get_shell()->env;
-	while (lst)
-	{
-		// printf("Search |%s|%s|\n", str, lst->name);
-		if (_string().equals(str, lst->key))
-			return (lst->value);
-		// lst = lst->next; //NOT A LINK LIST
-	}
-	return ("");
+	return (get_env(str)->value);
 }
 
 
@@ -29,24 +19,21 @@ void	dollar_for_money(char **out, char **str)
 	if (**str == '?') //get exit code
 	{
 		(*str)++;
-		tmp = _string()._string_itoa(get_shell()->ec);
+		tmp = _string().itoa(get_shell()->ec); 
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}
-	else //check for envp and valiadte no $$ || $"look" (TO-DO function)
+	else //check for envp and valiadte no $$ || $"look"
 	{
 		while ((*str)[j] != '$' && !_char().is_whitespace((*str)[j]) && !_string().isquote((*str)[j]) && (*str)[j])
 			j++;
-		tmp = _string_dup_at(*str, j); //copy until j
-		// tmp = ft_strldup(*str, j); //copy until j
+		tmp = _string_dup_at(*str, j);
 		(*str) += j;
-		printf("(dollar_for_money)tmp =%s\n", tmp);
 		tmp = parse_var_env(tmp);
 		j = 0;
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}
-	// printf("OUTPUT is %s\n", *out);
 }
 
 void	ft_squote(char **out, char **str)
@@ -75,7 +62,6 @@ void	ft_db_quote(char **out, char **str)
 	}
 }
 
-// _string().parse_array
 char	*parse_array(char *str)
 {
 	char	*out;

@@ -19,9 +19,9 @@ void	free_arrays(char **arr)
 	i = 0;
 	while (arr[i])
 	{
-		free_str(arr[i]);
-		i++;
+		_memory().free(arr[i]);
+		arr[i++] = NULL;
 	}
-	free(arr);
+	_memory().free(arr);
 	arr = NULL;
 }
