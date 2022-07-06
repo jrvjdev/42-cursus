@@ -2,6 +2,5 @@
 
 void	init_termios(void)
 {
-	
 	printf("hi termi\n");
 }

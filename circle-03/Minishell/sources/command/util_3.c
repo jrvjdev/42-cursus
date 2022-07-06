@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 22:31:18 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/06 20:25:48 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/06 21:06:49 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,8 @@ char	*command_pre_redirect(t_command *command)
 
 void	command_redirect(t_command *command)
 {
-	if (command->prev)
+	if (command->fd[0])
 	{
-		printf("PREV");
 		dup2(command->fd[1], 1);
 		close(command->fd[0]);
 	}
