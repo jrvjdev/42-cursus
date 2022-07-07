@@ -4,10 +4,13 @@ static void	sig_int(int sig)
 {
 	if (sig == SIGINT)
 	{
-		write(1, "newline\n", 8);
-		rl_replace_line("", 0);
+		write(1, "nl\n", 3);
+		//write(1, "newline\n", 8);
+		//rl_replace_line("", 0);
 		rl_on_new_line();
 		rl_redisplay();
+		//rl_reset_line_state();
+		//write(1, "$>", 2);
 		get_shell()->ec = 130;
 	}
 }
@@ -30,6 +33,7 @@ void	init_termios(void)
 	sigaction(SIGINT, &sa, NULL);
 //	sigaction(SIGQUIT, &sa, NULL);
 	
+//	rl_bind_key ('\t', rl_insert);
 	printf("hi termi\n");
 }
 
