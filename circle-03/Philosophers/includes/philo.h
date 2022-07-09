@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:49:49 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/09 18:27:37 by V                ###   ########.fr       */
+/*   Updated: 2022/07/09 18:50:21 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@
 
 # include <pthread.h>
 # include <sys/time.h>
+# include <stdbool.h>
 
 typedef struct	s_fork
 {
 	int				index;
 	pthread_mutex_t	*mutex;
+	bool			busy;
 }				t_fork;
 
 
@@ -49,13 +51,12 @@ typedef struct	s_info
 
 	t_philo			*philos;
 	t_fork			*forks;
-	pthread_mutex_t	slf;
 	pthread_t		*threads;
 }				t_info;
 
 //inits
 void	init_args(char **av);
-void	*_info(void);
+t_info	*_info(void);
 
 //thread
 int	init_threads(void);
@@ -67,5 +68,5 @@ uint64_t	time_since_start(void);
 
 //print
 void	print_info(void);
-
+void	pretty_print(t_philo *philo, char *str);
 #endif

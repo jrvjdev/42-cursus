@@ -1,6 +1,6 @@
 #include "../includes/philo.h"
 
-void	*_info(void)
+t_info	*_info(void)
 {
 	static t_info	info;
 
@@ -33,6 +33,7 @@ void	init_forks(t_info *info)
 		info->forks[i].mutex = malloc(sizeof(pthread_mutex_t));
 		pthread_mutex_init(info->forks[i].mutex, NULL);
 		info->forks[i].index = i;
+		info->forks[i].busy = false;
 		i++;
 	}
 }
@@ -42,7 +43,7 @@ void	init_args(char **av)
 	t_info	*info;
 	int		n;
 
-	n = 3; // n = ft_atoi(ag[1]);
+	n = 5; // n = ft_atoi(ag[1]);
 	info = _info();
 	info->number_of_philosophers = n;
 	info->time_to_die = 300;
@@ -56,5 +57,4 @@ void	init_args(char **av)
 
 	init_forks(info);
 	init_philo(info);
-
 }

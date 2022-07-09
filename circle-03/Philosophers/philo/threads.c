@@ -1,11 +1,32 @@
 #include "../includes/philo.h"
 
+void	_eat(t_philo *philo)
+{
+	pretty_print(philo, "EATING");
+	pthread_mutex_lock(philo->f1->mutex);
+	pthread_mutex_lock(philo->f2->mutex);
+
+	usleep(_info()->time_to_sleep);
+	philo->t_last_meal = gettimeofday_ms();
+	philo->n_meal++;
+	pthread_mutex_unlock(philo->f1->mutex);
+	pthread_mutex_unlock(philo->f2->mutex);
+	pretty_print(philo, "FINISHED");
+
+}
+
 void	*routine(void *arg)
 {
 	t_philo	*philo;
 
 	philo = (t_philo *)arg;
 	printf("hello philo %d| with forks (%d, %d)\n", philo->index, philo->f1->index, philo->f2->index);
+	for (int i = 0; i < 3; i++)
+	{
+		_eat(philo);
+		// _sleep(philo);
+		// _repeat(philo);
+	}
 	return (0);
 }
 
