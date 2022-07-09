@@ -6,7 +6,7 @@
 /*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:49:49 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/09 18:50:21 by V                ###   ########.fr       */
+/*   Updated: 2022/07/09 19:04:53 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct	s_fork
 {
 	int				index;
 	pthread_mutex_t	*mutex;
-	bool			busy;
 }				t_fork;
 
 
@@ -37,6 +36,7 @@ typedef struct s_philo
 	long int		t_last_meal; //time last meal
 	t_fork			*f1;
 	t_fork			*f2;
+	pthread_mutex_t	*mutex;
 	//probably status
 	// pthread_mutex_t	*slf;
 }					t_philo;

@@ -19,6 +19,8 @@ static void	init_philo(t_info *info)
 		info->philos[i].n_meal = 0;
 		info->philos[i].f1 = &info->forks[i];
 		info->philos[i].f2 = &info->forks[(i + 1) % info->number_of_philosophers];
+		info->philos[i].mutex = malloc(sizeof(pthread_mutex_t));
+		pthread_mutex_init(info->philos[i].mutex, NULL);
 		i++;
 	}
 }
@@ -33,7 +35,6 @@ void	init_forks(t_info *info)
 		info->forks[i].mutex = malloc(sizeof(pthread_mutex_t));
 		pthread_mutex_init(info->forks[i].mutex, NULL);
 		info->forks[i].index = i;
-		info->forks[i].busy = false;
 		i++;
 	}
 }
