@@ -19,8 +19,6 @@ static void	init_philo(t_info *info)
 		info->philos[i].n_meal = 0;
 		info->philos[i].f1 = &info->forks[i];
 		info->philos[i].f2 = &info->forks[(i + 1) % info->number_of_philosophers];
-		info->philos[i].mutex = malloc(sizeof(pthread_mutex_t));
-		pthread_mutex_init(info->philos[i].mutex, NULL);
 		i++;
 	}
 }
@@ -44,7 +42,7 @@ void	init_args(char **av)
 	t_info	*info;
 	int		n;
 
-	n = 5; // n = ft_atoi(ag[1]);
+	n = 3; // n = ft_atoi(ag[1]);
 	info = _info();
 	info->number_of_philosophers = n;
 	info->time_to_die = 300;
@@ -55,7 +53,9 @@ void	init_args(char **av)
 	info->forks = malloc(sizeof(t_fork) * n);
 	info->philos = malloc(sizeof(t_philo) * n);
 	info->threads = malloc(sizeof(pthread_t) * n);
+	pthread_mutex_init(&info->mutex, NULL);
 
 	init_forks(info);
 	init_philo(info);
+
 }

@@ -2,10 +2,10 @@
 
 void	_sleep(t_philo *philo)
 {
-	pthread_mutex_lock(philo->mutex);
+	pretty_print(philo, "Sleeping");
 	usleep(_info()->time_to_sleep);
-	pthread_mutex_unlock(philo->mutex);
 }
+
 void	_eat(t_philo *philo)
 {
 	pretty_print(philo, "EATING");
