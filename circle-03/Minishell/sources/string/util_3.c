@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:13:37 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 14:03:16 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:42:37 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@ static char	**_string_char(char *string, char separator, char **list, int index)
 	while (string && *string == separator)
 		string++;
 	length = 0;
-	while (string[length] != separator && string[length])
+	while (string[length] && string[length] != separator)
 		length++;
 	new_string = _memory().malloc(sizeof(char) * (length + 1));
 	length = 0;
 	while (string && *string && *string != separator)
 		new_string[length++] = *string++;
+	while (string && *string == separator)
+		string++;
 	if (string && *string)
 		list = _string_char(string, separator, list, index +1);
 	else
-		list = _memory().malloc(sizeof(char *) * (index + 1));
+		list = _memory().malloc(sizeof(char *) * (index + 2));
 	list[index] = new_string;
 	return (list);
 }

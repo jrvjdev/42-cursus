@@ -24,7 +24,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	s1_len = _string().length(s1); 
+	s1_len = _string().length(s1);
 	s2_len = _string().length(s2);
 	t = s1_len + s2_len;
 	ptr = (char *)malloc(sizeof(char) * (t + 1));
@@ -40,9 +40,7 @@ char	*ft_prompt(void)
 {
 	char	*str;
 	char	prompt[255];
-	// int		status; //statuc of last command, if SUCCESS green, if failer RED, if -1 BLACK
 
-	// status = 0; //get_shell()->ec;
 	str = getcwd(prompt, sizeof(prompt));
 	while (*str)
 		str++;

@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 21:35:09 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/01 15:02:26 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/05 02:42:36 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	*_memory_malloc(size_t __size)
 	node = malloc(sizeof(t_malloc));
 	if (!node)
 	{
+		perror("error _memory_malloc");
 		_memory().free_all();
-		perror("error malloc");
 		exit(EXIT_FAILURE);
 	}
 	node->size = __size;
@@ -50,6 +50,8 @@ void	*_memory_malloc(size_t __size)
 	{
 		free(node);
 		_memory().free_all();
+		perror("error _memory_malloc");
+		exit(EXIT_FAILURE);
 	}
 	_memory_add_maloc(&node);
 	return (node->ptr);
