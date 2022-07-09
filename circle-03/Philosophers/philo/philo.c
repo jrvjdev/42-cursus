@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 12:53:11 by joaribei          #+#    #+#             */
-/*   Updated: 2022/06/16 12:55:22 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/09 18:28:44 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
+
 
 int	main(int ac, char **av)
 {
-	int	number_of_philosophers;
-	int	time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
-	int	number_of_time_each_philosopher_must_eat;
+	/*1 vaidate args */
+	/*2 initialize*/ init_args(av);
+	/*3 threads routine*/ init_threads();
+	/*4 free and exit (mutext destroy)*/ 
+
+	print_info();
 }
