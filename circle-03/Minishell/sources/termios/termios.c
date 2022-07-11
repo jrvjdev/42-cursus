@@ -5,9 +5,9 @@ void	sig_int(int sig)
 	if (sig == SIGINT)
 	{
 		printf("(newline)\n");
-		// rl_replace_line("", 0);
-		// rl_on_new_line();
-		// rl_redisplay();
+//		rl_replace_line("", 0);
+		rl_on_new_line();
+		rl_redisplay();
 	}
 }
 void	sig_quit(int sig)
