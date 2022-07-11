@@ -1,10 +1,9 @@
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 char		*parse_var_env(char *str) //returns $PWD into (User/v/Home)
 {
 	return (get_env(str)->value);
 }
-
 
 void	dollar_for_money(char **out, char **str)
 {
@@ -19,7 +18,7 @@ void	dollar_for_money(char **out, char **str)
 	if (**str == '?')
 	{
 		(*str)++;
-		tmp = _string().itoa(get_shell()->ec); 
+		tmp = _string().itoa(get_shell()->ec);
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}
@@ -87,10 +86,3 @@ char	*parse_array(char *str)
 	out[_string().length(out) + 1] = 0;
 	return (out);
 }
-
-
-/* to watch out for
-* echo / $PWD'out' / $PWD$USR / $PWDout / $'this'
-* echo "$PWD" / '$PWD' / "$'PWD'"
-
-*/

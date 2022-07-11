@@ -1,4 +1,4 @@
-#include "../includes/prompt.h"
+#include "../../includes/prompt.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

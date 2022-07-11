@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util_4.c                                           :+:      :+:    :+:   */
+/*   system.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 20:14:26 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/06 20:56:49 by joaribei         ###   ########.fr       */
+/*   Created: 2022/07/08 20:24:13 by joaribei          #+#    #+#             */
+/*   Updated: 2022/07/09 09:58:05 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/command.h"
 
-char	*command_pre_system(t_command *command)
+char	*command_pre_system(t_command *invoker, t_command *this)
 {
 	char	*name;
 
-	if (command->next)
+	// printf("%s %s\n", __func__, this->name);
+	if (this->next)
 	{
-		name = ft_strjoin(command->name, " ");
-		name = ft_strjoin(name, command->next->pre_function(command->next));
+		name = ft_strjoin(this->name, " ");
+		name = ft_strjoin(name, this->next->pre_function(invoker, this->next));
 	}
 	else
-		name = ft_strjoin(command->name, "");
-	_command_free(command);
+		name = ft_strjoin(this->name, "");
+	_command_free(this);
 	return (name);
 }
-
 
 char	*get_cmd(char **paths, char *cmd)
 {
@@ -57,7 +57,7 @@ void	terminate(char *m)
 	exit(EXIT_FAILURE);
 }
 
-void	command_system(t_command *command)
+void	command_system(t_command *this)
 {
 	char	*name;
 	char	**args;
@@ -67,29 +67,27 @@ void	command_system(t_command *command)
 	pid_t	c_pid;
 
 	test = 0;
-	if (command->next)
+	// printf("%s %s\n", __func__, this->name);
+	if (this->next)
 	{
-		name = ft_strjoin(command->name, " ");
-		name = ft_strjoin(name, command->next->pre_function(command->next));
+		name = ft_strjoin(this->name, " ");
+		name = ft_strjoin(name, this->next->pre_function(this, this->next));
 	}
 	else
-		name = ft_strjoin(command->name, "");
-	if (!command->error)
+		name = ft_strjoin(this->name, "");
+	c_pid = fork();
+	if (c_pid < 0)
+		terminate("fork");
+	if (c_pid == 0)
 	{
-		c_pid = fork();
-		if (c_pid < 0)
-			terminate("fork");
-		if (c_pid == 0)
-		{
-			args = _string().split_char(name, ' ');
-			path = get_env("PATH")->value;
-			paths = _string().split_char(path, ':');
-			while (args[test])
-				test++;
-			args[test] = NULL;
-			execve(get_cmd(paths, command->name), args, NULL);
-		}
-		wait(NULL);
+		args = _string().split_string(name, " ");
+		path = get_env("PATH")->value;
+		paths = _string().split_string(path, ":");
+		while (args[test])
+			test++;
+		args[test] = NULL;
+		execve(get_cmd(paths, this->name), args, NULL);
 	}
-	_command_free(command);
+	wait(NULL);
+	_command_free(this);
 }

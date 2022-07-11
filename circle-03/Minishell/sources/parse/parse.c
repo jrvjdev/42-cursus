@@ -1,4 +1,4 @@
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 static char	*buffer_quotes(char **buff, char c, char *str, int i)
 {

@@ -6,7 +6,7 @@
 #    By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/05 16:27:18 by V                ###   ########.fr        #
+#    Updated: 2022/07/08 21:57:29 by joaribei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,22 @@ SRCS =	${SRC_DIR}/minishell.c \
 		${SRC_DIR}/char/char.c \
 		${SRC_DIR}/char/util_1.c \
 		${SRC_DIR}/char/util_2.c \
+		${SRC_DIR}/command/cd.c \
 		${SRC_DIR}/command/command.c \
-		${SRC_DIR}/command/util_1.c \
-		${SRC_DIR}/command/util_2.c \
-		${SRC_DIR}/command/util_3.c \
-		${SRC_DIR}/command/util_4.c \
+		${SRC_DIR}/command/echo.c \
+		${SRC_DIR}/command/env.c \
+		${SRC_DIR}/command/exit.c \
+		${SRC_DIR}/command/exit.c \
+		${SRC_DIR}/command/export.c \
+		${SRC_DIR}/command/file.c \
+		${SRC_DIR}/command/greater_than_append.c \
+		${SRC_DIR}/command/greater_than.c \
+		${SRC_DIR}/command/less_than_append.c \
+		${SRC_DIR}/command/less_than.c \
+		${SRC_DIR}/command/pwd.c \
+		${SRC_DIR}/command/references.c \
+		${SRC_DIR}/command/system.c \
+		${SRC_DIR}/command/unset.c \
 		${SRC_DIR}/env/env.c \
 		${SRC_DIR}/memory/memory.c \
 		${SRC_DIR}/memory/util_1.c \

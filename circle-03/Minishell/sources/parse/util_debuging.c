@@ -1,4 +1,4 @@
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 /* FOR DEBUGGING */
 
 void	print_arrays(char **a)

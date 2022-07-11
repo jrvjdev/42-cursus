@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util_1.c                                           :+:      :+:    :+:   */
+/*   references.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 08:19:04 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/05 23:06:15 by joaribei         ###   ########.fr       */
+/*   Updated: 2022/07/09 00:00:38 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 int	_names(char	*name)
 {
 	unsigned long	index;
-	static char		_names[8][10] = {
+	static char		_names[11][7] = {
 		"cd",
-		"env",
-		"pwd",
 		"echo",
+		"env",
 		"exit",
-		"unset",
 		"export",
-		">"
+		">>",
+		">",
+		"<<",
+		"<",
+		"pwd",
+		"unset"
 	};
 
 	index = 0;
@@ -36,17 +39,54 @@ int	_names(char	*name)
 	return (-1);
 }
 
+char	*_token(char **name, t_command *command)
+{
+	unsigned long	index;
+	static char		_names[10][3] = {
+		"||",
+		"|",
+		">>",
+		">",
+		"<<",
+		"<",
+		"&&",
+		"&",
+		";;",
+		";"
+	};
+
+	*name = NULL;
+	if (!command)
+	{
+		*name = "newline";
+		return ("newline");
+	}
+	index = -1;
+	while (++index < (sizeof(_names) / sizeof(*_names)))
+	{
+		if (_string().beginning_equals(command->name, _names[index]) > 0)
+		{
+			*name = _names[index];
+			return (*name);
+		}
+	}
+	return (NULL);
+}
+
 t_pre_function	_pre_functions(int index)
 {
-	static t_pre_function	functions[8] = {
+	static t_pre_function	functions[11] = {
 		command_pre_cd,
-		command_pre_env,
-		command_pre_pwd,
 		command_pre_echo,
+		command_pre_env,
 		command_pre_exit,
-		command_pre_unset,
 		command_pre_export,
-		command_pre_redirect
+		command_pre_greater_than_append,
+		command_pre_greater_than,
+		command_pre_less_than_append,
+		command_pre_less_than,
+		command_pre_pwd,
+		command_pre_unset
 	};
 
 	if (index < 0)
@@ -56,15 +96,18 @@ t_pre_function	_pre_functions(int index)
 
 t_function	_functions(int index)
 {
-	static t_function	functions[8] = {
+	static t_function	functions[11] = {
 		command_cd,
-		command_env,
-		command_pwd,
 		command_echo,
+		command_env,
 		command_exit,
-		command_unset,
 		command_export,
-		command_redirect
+		command_greater_than_append,
+		command_greater_than,
+		command_less_than_append,
+		command_less_than,
+		command_pwd,
+		command_unset
 	};
 
 	if (index < 0)

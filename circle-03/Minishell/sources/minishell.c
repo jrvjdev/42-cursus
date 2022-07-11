@@ -6,7 +6,7 @@
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:38:39 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/05 17:27:24 by V                ###   ########.fr       */
+/*   Updated: 2022/07/09 09:28:20 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ int	main(int ac, char **av, char **env)
 	char	**cmds;
 
 	(void)av;
+	name = 0;
 	if (ac != 1)
 		return (0);
 	while (*env)
 		init_env(_string_new_hashmap(*env++));
-	init_termios();
+	//init_termios();
 	while (1)
 	{
 		line = readline(ft_prompt());
@@ -46,6 +47,7 @@ int	main(int ac, char **av, char **env)
 		}
 		execute_command();
 		free_arrays(cmds);
+		cmds = NULL;
 		free(line);
 		line = NULL;
 	}
@@ -142,40 +144,52 @@ int	main(int ac, char **av, char **env)
 // // }
 
 
+
+
+
+
+
 // const char *str = "more.\n";
 
-// void	file_create(char *name)
+// void	file_create(char *name, int mode)
 // {
 // 	int	fd;
-
-// 	fd = open(name, O_CREAT | O_WRONLY | O_TRUNC, 0644);
+// 	// O_TRUNC | O_APPEND
+// 	fd = open(name, O_CREAT | O_WRONLY | mode, 0666);
 // 	if (fd == -1)
 // 		return ;
-// 	// write(fd, str, _string().length((char *)str));
+// 	write(fd, str, _string().length((char *)str));
 // 	printf("Done Writing!\n");
 // 	close(fd);
 // }
 
 // int	main(void)
 // {
-// 	int			fd;
-// 	const char	*filename;
+// 	// int			fd;
+// 	// const char	*filename;
 
-// 	filename = "innn.txt";
-// 	file_create("file_create.txt");
-// 	fd = open(filename, O_APPEND | O_CREAT | O_RDWR);
-// 	// int fd = open(filename, O_CREAT | O_RDWR | O_APPEND, S_IRUSR | S_IWUSR);
-// 	if (fd == -1)
-// 	{
-// 		perror("open");
-// 		exit(EXIT_FAILURE);
-// 	}
+// 	// filename = "innn.txt";
+// 	file_create("file_create.txt", O_TRUNC);
+// 	// fd = open(filename, O_CREAT | O_APPEND , O_RDWR | S_IWUSR);
+// 	// //fd = open(filename, O_CREAT | O_RDWR | O_APPEND, S_IRUSR | S_IWUSR);
+// 	// if (fd == -1)
+// 	// {
+// 	// 	perror("open");
+// 	// 	exit(EXIT_FAILURE);
+// 	// }
 
-// 	write(fd, str, _string().length((char *)str));
-// 	printf("Done Writing!\n");
-// 	close(fd);
+// 	// write(fd, str, _string().length((char *)str));
+// 	// printf("Done Writing!\n");
+// 	// close(fd);
 // 	exit(EXIT_SUCCESS);
 // }
+
+
+
+
+
+
+
 
 // int	main(void)
 // {
@@ -184,7 +198,7 @@ int	main(int ac, char **av, char **env)
 
 // 	saved_stdout = dup(1);
 // 	printf("Hello World1!\n");
-// 	fd_1 = open("file_create.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+// 	fd_1 = open("tempfile.txt", O_CREAT | O_RDWR | O_APPEND);
 // 	dup2(fd_1, 1);
 // 	printf("Hello World2!\n");
 // 	dup2(saved_stdout, 1);
@@ -198,7 +212,7 @@ int	main(int ac, char **av, char **env)
 //     // open() returns a file descriptor file_desc to a 
 //     // the file "dup.txt" here"
   
-//     int file_desc = open("file_create.txt", O_WRONLY | O_APPEND);
+//     int file_desc = open("file_create.txt", O_CREAT);
       
 //     if(file_desc < 0)
 //         printf("Error opening the file\n");
@@ -249,5 +263,4 @@ int	main(int ac, char **av, char **env)
 // 	printf("stdout again\n");
 // 	return (0);
 // }
-
 

@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.c                                             :+:      :+:    :+:   */
+/*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 09:00:55 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/04 09:06:52 by joaribei         ###   ########.fr       */
+/*   Created: 2022/07/06 20:14:26 by joaribei          #+#    #+#             */
+/*   Updated: 2022/07/08 21:32:36 by joaribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/file.h"
+#include "../../includes/command.h"
 
-t_file	_file(char *name)
+char	*command_pre_pwd(t_command *invoker, t_command *this)
 {
-	static t_file	file = {
-		
-	};
+	char	*name;
 
-	return (file);
+	(void)invoker;
+	name = this->name;
+	_command_free(this);
+	return (name);
+}
+
+void	command_pwd(t_command *this)
+{
+	printf("command %s\n", this->name);
 }
