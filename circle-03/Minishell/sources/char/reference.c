@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   char.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaribei < joaribei@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 12:53:11 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/08 23:09:36 by joaribei         ###   ########.fr       */
+/*   Created: 2022/07/01 10:56:37 by joaribei          #+#    #+#             */
+/*   Updated: 2022/07/03 10:06:26 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../../includes/char.h"
 
-int	main(int ac, char **av)
+t_char	_char(void)
 {
-	int	number_of_philosophers;
-	int	time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
-	int	number_of_time_each_philosopher_must_eat;
+	static t_char	_char = {
+		_is_alpha,
+		_is_lowercase,
+		_is_uppercase,
+		_is_whitespace,
+		_to_lower,
+		_to_upper
+	};
+
+	return (_char);
 }
 

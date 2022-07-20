@@ -1,36 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:38:08 by joaribei          #+#    #+#             */
-/*   Updated: 2022/07/05 16:58:53 by V                ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef MINISHELL_H
-# define MINISHELL_H
+#define MINISHELL_H
 
-# include <stdlib.h>
-# include <termios.h>
-# include <signal.h>
-# include <sys/wait.h>
-# include <sys/types.h>
+#include <stdio.h>
+#include <readline/history.h>
+#include <readline/readline.h>
 
-# include <unistd.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <readline/history.h>
-# include <readline/readline.h>
+#include "list.h"
+#include "memory.h"
+#include "string.h"
+#include "signal_r.h"
+#include "command.h"
+#include "parse.h"
 
-# include "string.h"
-# include "command.h"
-# include "env.h"
-# include "parse.h"
-# include "prompt.h"
-# include "static.h"
-# include "signl.h"
+typedef struct s_minishell
+{
+	t_hashmap *env; // link_list to save envps
+	int ec;			// exitcode
+} t_shell;
 
-#endif
+t_shell *get_shell(void);
+
+#endif // DOBLY_LINKED_LIST_H

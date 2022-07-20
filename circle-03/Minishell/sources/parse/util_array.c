@@ -1,16 +1,12 @@
-#include "../includes/minishell.h"
+#include "../../includes/parse.h"
 
-//this can be delete
-
-
-void	free_str(char *str)
-{
-	// printf("free_str:%s\n", str);
-	if (!str)
-		return ;
-	free(str);
-	str = NULL;
-}
+// void	free_str(char *str)
+// {
+// 	if (!str)
+// 		return ;
+// 	free(str);
+// 	str = NULL;
+// }
 
 void	free_arrays(char **arr)
 {

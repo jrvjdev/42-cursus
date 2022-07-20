@@ -1,33 +1,46 @@
-#include "../includes/minishell.h"
+#include "../../includes/parse.h"
 
-char		*parse_var_env(char *str) //returns $PWD into (User/v/Home)
+//echo $HOME
+//echo $?
+//echo $?$hi 1
+//echo $?$HOME 1/Users/joao
+// ≠ shell->ec (1) if sucess or ... if fail
+//                        DAUGHTER
+
+t_shell *get_shell(void)
 {
-	return (get_env(str)->value);
+	static t_shell shell;
+
+	return (&shell);
 }
 
-
-void	dollar_for_money(char **out, char **str)
+char *parse_var_env(char *str) // returns $PWD into (User/v/Home)
 {
-	char	*tmp;
-	int		i;
-	int		j;
+	return (_env().get(str)->value);
+}
+
+void dollar_for_money(char **out, char **str)
+{
+	char *tmp;
+	int i;
+	int j;
 
 	i = _string().length(*out);
 	j = 0;
 	(*str)++;
 	tmp = NULL;
-	if (**str == '?')
+	if (**str == '?') // EXIT CODE - echo $?
 	{
 		(*str)++;
-		tmp = _string().itoa(get_shell()->ec); 
+		tmp = _string().itoa(get_shell()->ec);
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}
 	else
 	{
-		while ((*str)[j] != '$' && !_char().is_whitespace((*str)[j]) && !_string().isquote((*str)[j]) && (*str)[j])
+		while ((*str)[j] != '$' && !_char().is_whitespace((*str)[j]) && !_string().is_quote((*str)[j]) && (*str)[j])
 			j++;
-		tmp = _string_dup_at(*str, j);
+		tmp = _string().dup_at(*str, j);
 		(*str) += j;
 		tmp = parse_var_env(tmp);
 		j = 0;
@@ -36,19 +49,19 @@ void	dollar_for_money(char **out, char **str)
 	}
 }
 
-void	ft_squote(char **out, char **str)
+void ft_squote(char **out, char **str)
 {
-	int	i;
+	int i;
 
 	i = _string().length(*out);
 	(*str)++;
 	while (**str != '\'' && **str)
-			(*out)[i++] = *(*str)++;
+		(*out)[i++] = *(*str)++;
 }
 
-void	ft_db_quote(char **out, char **str)
+void ft_db_quote(char **out, char **str)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	(*str)++;
@@ -62,10 +75,10 @@ void	ft_db_quote(char **out, char **str)
 	}
 }
 
-char	*parse_array(char *str)
+char *parse_clean(char *str)
 {
-	int		i;
-	char	*out;
+	int i;
+	char *out;
 
 	out = _memory().malloc(sizeof(char) * 400);
 	i = 0;
@@ -88,9 +101,8 @@ char	*parse_array(char *str)
 	return (out);
 }
 
-
 /* to watch out for
 * echo / $PWD'out' / $PWD$USR / $PWDout / $'this'
 * echo "$PWD" / '$PWD' / "$'PWD'"
-
+'$HOME' -> RETURN $HOME - but should return -1
 */

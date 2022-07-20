@@ -1,4 +1,4 @@
-#include "../includes/minishell.h"
+#include "../../includes/parse.h"
 
 void	_stradd(char **str, char *add)
 {
@@ -9,7 +9,7 @@ void	_stradd(char **str, char *add)
   i = 0;
   while ((*str)[i])
     i++;
-  (*str) = realloc((*str), _string().length(*str) + _string().length(add) + 1);
+  (*str) = _memory().realloc((*str), _string().length(*str) + _string().length(add) + 1);
   while (*add)
   {
     (*str)[i++] = *add;

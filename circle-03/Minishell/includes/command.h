@@ -21,54 +21,49 @@
 # include <fcntl.h>
 
 # include "string.h"
-# include "prompt.h"
-# include "env.h"
-# include "parse.h"
+# include "list.h"
+# include "memory.h"
 
+typedef struct s_token		t_token;
 typedef struct s_command	t_command;
-typedef void				(*t_function)(t_command *command);
-typedef char				*(*t_pre_function)(t_command *command);
+typedef void 				(*t_function)(t_token *command);
+typedef char 				*(*t_pre_function)(t_token *command);
 
-struct	s_command
+struct	s_token
 {
+	t_token 		*prev;
+	t_token 		*next;
 	int				error;
 	int				cmd;
 	int				fd[2];
-	char			*name; // ls 
+	char			*name;
 	t_pre_function	pre_function;
 	t_function		function;
-	t_command		*prev;
-	t_command		*next;
 };
 
-int				_names(char	*name);
+struct s_command
+{
+	t_token 	**(*list)(void);
+	void 		(*execute)(void);
+	int 		(*delete)(t_token *command);
+	void 		(*create)(char *cmds, t_pre_function pre_function,
+					t_function function);
+};
+
+t_command 		_command(void);
+
+int				_names(char *name);
 t_function		_functions(int index);
 t_pre_function	_pre_functions(int index);
 
-char			*command_pre_cd(t_command *command);
-char			*command_pre_env(t_command *command);
-char			*command_pre_pwd(t_command *command);
-char			*command_pre_echo(t_command *command);
-char			*command_pre_exit(t_command *command);
-char			*command_pre_unset(t_command *command);
-char			*command_pre_system(t_command *command);
-char			*command_pre_export(t_command *command);
-char			*command_pre_redirect(t_command *command);
+t_token			**_commands_list(void);
+void			_command_execute(void);
+int 			_command_delete(t_token *command);
+t_token			*_command_check(t_token **list, t_token *command);
+void			_command_create(char *cmds, t_pre_function pre_function, \
+					t_function function);
 
-void			command_cd(t_command *command);
-void			command_env(t_command *command);
-void			command_pwd(t_command *command);
-void			command_echo(t_command *command);
-void			command_exit(t_command *command);
-void			command_unset(t_command *command);
-void			command_system(t_command *command);
-void			command_export(t_command *command);
-void			command_redirect(t_command *command);
-
-int				size_of_command(void);
-void			execute_command(void);
-int				_command_free(t_command *command);
-void			init_command(char *cmds, t_pre_function pre_function, \
-t_function function);
+void 			command_cd(t_token *command);
+char 			*command_pre_cd(t_token *command);
 
 #endif
