@@ -2,11 +2,11 @@
 
 void	print_arrays(char **a)
 {
-  int i;
+	int i;
 
-  i = 0;
+	i = 0;
 	while(a[i])
 	{
-	  printf("%s\n", a[i++]);
+		printf("%s\n", a[i++]);
 	}
 }

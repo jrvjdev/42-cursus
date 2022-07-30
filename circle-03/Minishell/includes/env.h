@@ -16,18 +16,25 @@
 # include "string.h"
 
 typedef struct s_env t_env;
+typedef struct s_node_env t_node_env;
+
+struct s_node_env
+{
+	char *key;
+	char *value;
+	t_node_env *prev;
+	t_node_env *next;
+};
 
 struct s_env
 {
-	t_hashmap *(*create)(char *hashmap);
-	t_hashmap *(*get)(char *key);
-	t_hashmap **(*list)(void);
+	void *(*create)(char *hashmap);
+	t_node_env *(*get)(char *key);
 };
 
 t_env		_env(void);
 
-t_hashmap	**_env_list(void);
-t_hashmap	*_env_get(char *key);
-t_hashmap 	*_env_create(char *hashmap);
+t_node_env 	*_env_get(char *key);
+void 		*_env_create(char *hashmap);
 
 #endif

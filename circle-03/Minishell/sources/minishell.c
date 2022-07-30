@@ -4,73 +4,87 @@ void do_with_ac(int ac, char **av)
 {
     char *line;
     char **cmds;
-    int index;
 
     for (int i = 1; i < ac; i++)
     {
         line = av[i];
-        printf("LINE= %s\n", line);
         if (_string().length(line) > 0)
         {
             if (_string().equals(line, "exit"))
                 break;
             add_history(line);
             cmds = buffer_into_array(line);
-            // cmds = _string().split_char(line, ' ');
-            while (*cmds)
+            while (_string().length(*cmds) > 0)
             {
-                index = _names(*cmds);
-                printf("%s- %i\n", *cmds, index);
-                _command().create(*(cmds), _pre_functions(index), _functions(index));
-                cmds++;
+                _command().create(*(cmds++));
             }
         }
         _command().execute();
         _memory().free(cmds);
         cmds = 0;
     }
-    printf("clean-exit_ac\n");
     exit(1);
 }
 
+// int main(int ac, char **av, char **env)
+// {
+//     char *line;
+//     char **cmds;
+
+//     if (ac != 1)
+//         do_with_ac(ac, av);
+//     while (*env)
+//         _env().create(*(env++));
+//     while (1)
+//     {
+//         line = readline("$> ");
+//         if (_string().length(line) > 0)
+//         {
+//             if (_string().equals(line, "exit"))
+//                 break;
+//             cmds = buffer_into_array(line);
+//             while (cmds && *cmds)
+//                 _command().create(*(cmds++));
+//             add_history(line);
+//         }
+//         _command().execute();
+//         free_arrays(cmds);
+//         free(line);
+//         line = NULL;
+//         cmds = NULL;
+//     }
+//     return (0);
+// }
+
 int main(int ac, char **av, char **env)
 {
-    int index;
     char *line;
     char **cmds;
 
+    (void)av;
     if (ac != 1)
-        do_with_ac(ac, av);
-    (void)env;
-    index = 1;
+        return (0);
+    while (*env)
+    {
+        _env().create(_string().dup(*env));
+        ++env;
+    }
     while (1)
     {
         line = readline("$> ");
-        printf("READLINE= %s\n", line);
-        if (_string().length(line) > 0)
-        {
-            if (_string().equals(line, "exit"))
-                break;
+        if (_string().length(line) == 0)
+            continue;
+        else
             add_history(line);
-            cmds = buffer_into_array(line);
-            // cmds = _string().split_char(line, ' ');
-            while (_string().length(*cmds) > 0)
-            {
-                index = _names(*cmds);
-                // printf("%s- %i\n", *cmds, index);
-                _command().create(*(cmds), _pre_functions(index), _functions(index));
-                cmds++;
-            }
+        cmds = buffer_into_array(line);
+        while (*cmds)
+        {
+            _command().create(*(cmds++));
         }
         _command().execute();
-        _memory().free(cmds);
-        cmds = 0;
+        free_arrays(cmds);
+        free(line);
+        line = NULL;
     }
-    //    system("leaks minishell");
-    printf("clean-exit\n");
     return (0);
 }
-
-// '$HOME'
-// "ls" -> ls
-// "'ls'" -> 'ls'(return -1) error

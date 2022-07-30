@@ -40,7 +40,7 @@ static char	*buffer_to_string(char **buff)
 	char	*str;
 	int		i;
 
-	str = _memory().malloc(sizeof(char) * (_string().length(*buff) + 1));
+	str = calloc(sizeof(char), (_string().length(*buff) + 1));
 	i = 0;
 	while (**buff)
 	{
@@ -76,7 +76,7 @@ char	**buffer_into_array(char *str)
 
 	i = 0;
 	l = r_size(str);
-	a = _memory().malloc(sizeof(char) * l + 1);
+	a = _memory().malloc(sizeof(char *) * (l + 1));
 	while (*str)
 	{
 		while (_char().is_whitespace(*str))

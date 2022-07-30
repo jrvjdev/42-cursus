@@ -1,18 +1,22 @@
 #include "../../includes/command.h"
 
-void _command_create(char *cmds, t_pre_function pre_function, t_function function)
-{
-	(void)cmds;
-	(void)pre_function;
-	(void)function;
-	t_token *command;
+int				_command_name(char *name);
+void			_command_add(t_node_command *node);
+t_function		_command_function(int index);
+t_pre_function	_command_pre_function(int index);
 
-	command = _memory().malloc(sizeof(t_token));
+void _command_create(char *name)
+{
+	int				index_name;
+	t_node_command *command;
+
+	command = _memory().malloc(sizeof(t_node_command));
 	command->prev = NULL;
 	command->next = NULL;
-	command->error = 0;
-	command->name = _string().dup(cmds);
-	command->pre_function = pre_function;
-	command->function = function;
-	_list().add_node((void **)_command().list(), command);
+	command->name = _string().dup(name);
+	command->fd[0] = 0;
+	index_name = _command_name(name);
+	command->pre_function = _command_pre_function(index_name);
+	command->function = _command_function(index_name);
+	_command_add(command);
 }

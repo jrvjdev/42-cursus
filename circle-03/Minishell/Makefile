@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: V <V@student.42.fr>                        +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/07 20:08:59 by joaribei          #+#    #+#              #
-#    Updated: 2022/07/12 19:03:34 by V                ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 #name fo the project
 NAME = minishell
 
@@ -26,7 +14,7 @@ SRC_DIR 	=	./sources
 CHAR		=	${SRC_DIR}/char
 COMMAND		=	${SRC_DIR}/command
 ENV			=	${SRC_DIR}/env
-LIST		=	${SRC_DIR}/list
+FILE		=	${SRC_DIR}/file
 MEMORY		=	${SRC_DIR}/memory
 PARSE		=	${SRC_DIR}/parse
 SIGNAL		=	${SRC_DIR}/signal
@@ -39,19 +27,28 @@ SRCS		=	${CHAR}/is_alpha.c \
 				${CHAR}/reference.c \
 				${CHAR}/to_lower.c \
 				${CHAR}/to_upper.c \
+				${COMMAND}/add.c \
 				${COMMAND}/cd.c \
-				${COMMAND}/check.c \
 				${COMMAND}/create.c \
 				${COMMAND}/delete.c \
+				${COMMAND}/echo.c \
 				${COMMAND}/execute.c \
+				${COMMAND}/function.c \
+				${COMMAND}/greater_than.c \
+				${COMMAND}/more_greater_than.c \
+				${COMMAND}/name.c \
+				${COMMAND}/pre_function.c \
 				${COMMAND}/reference.c \
+				${COMMAND}/system.c \
+				${COMMAND}/token.c \
+				${ENV}/add.c \
 				${ENV}/create.c \
 				${ENV}/get.c \
 				${ENV}/reference.c \
-				${LIST}/add.c \
-				${LIST}/reference.c \
-				${LIST}/remove.c \
-				${LIST}/size.c \
+				${FILE}/close.c \
+				${FILE}/create.c \
+				${FILE}/reference.c \
+				${MEMORY}/add.c \
 				${MEMORY}/calloc.c \
 				${MEMORY}/copy.c \
 				${MEMORY}/free.c \
@@ -72,6 +69,7 @@ SRCS		=	${CHAR}/is_alpha.c \
 				${STRING}/is_quote.c \
 				${STRING}/itoa.c \
 				${STRING}/length.c \
+				${STRING}/read_line.c \
 				${STRING}/reference.c \
 				${STRING}/split.c \
 				${SRC_DIR}/minishell.c \
@@ -85,7 +83,7 @@ OBJS		= 	$(subst .c,.o,$(subst ${SRC_DIR},${OBJ_DIR},${SRCS}))
 
 # Variables for compiler configs
 CC			=	gcc
-CFLAGS		=	-Werror -Wall -Wextra
+CFLAGS		=	-Werror -Wall -Wextra -g -fsanitize=address
 INCLUDES	=	-I$(INC_DIR)
 
 all: ${BUILD_DIR} ${NAME}

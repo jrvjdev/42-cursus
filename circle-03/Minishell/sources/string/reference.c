@@ -3,6 +3,7 @@
 t_string _string(void)
 {
     static t_string _string = {
+        _string_read_line,
         _string_copy,
         _string_dup,
         _string_dup_at,

@@ -1,13 +1,28 @@
 #include "../../includes/command.h"
 
-int _command_delete(t_token *command)
+void _command_delete(t_node_command *command)
 {
-	if (!_command_check(_command().list(), command))
+	t_node_command **list;
+
+	list = _command_list();
+	if (*list == command)
+		*list = command->next;
+	if (command->next)
+		command->next->prev = command->prev;
+	if (command->prev)
+		command->prev->next = command->next;
+	if (*list)
 	{
-		write(1, "Error\n", 6);
-		return (1);
+		_memory().free(command);
+		_memory().free(command);
 	}
-	_list().remove_node((void **)_command().list(), command);
-	_memory().free(command);
-	return (0);
+}
+
+void	_command_delete_all(void)
+{
+	t_node_command **list;
+
+	list = _command_list();
+	while (*list)
+		_command_delete(*list);
 }

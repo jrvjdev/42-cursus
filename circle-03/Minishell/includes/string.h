@@ -2,22 +2,24 @@
 #define STRING_H
 
 #include <sys/types.h>
+#include <stdio.h>
 
 #include "memory.h"
 
 typedef struct s_string t_string;
-typedef struct s_hashmap t_hashmap;
+// typedef struct s_hashmap t_hashmap;
 
-struct s_hashmap
-{
-	t_hashmap 	*prev;
-	t_hashmap 	*next;
-	char 		*key;
-	char 		*value;
-};
+// struct s_hashmap
+// {
+// 	t_hashmap 	*prev;
+// 	t_hashmap 	*next;
+// 	char 		*key;
+// 	char 		*value;
+// };
 
 struct s_string
 {
+	char 	*(*read_line)(char *string);
 	void 	(*copy)(char *dst, char *src);
 	char 	*(*dup)(const char *string);
 	char 	*(*dup_at)(const char *string, size_t size);
@@ -32,6 +34,7 @@ struct s_string
 
 t_string	_string(void);
 
+char 		*_string_read_line(char *string);
 void 		_string_copy(char *dst, char *src);
 char 		*_string_dup(const char *string);
 char 		*_string_dup_at(const char *string, size_t size);
