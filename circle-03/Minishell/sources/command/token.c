@@ -3,11 +3,9 @@
 char *_command_token(char **name, t_node_command *command)
 {
 	unsigned long index;
-	static char _tokens[10][3] = {
+	static char _tokens[8][3] = {
 		"||",
 		"|",
-		">>",
-		">",
 		"<<",
 		"<",
 		"&&",

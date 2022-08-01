@@ -7,12 +7,12 @@
 // ≠ shell->ec (1) if sucess or ... if fail
 //                        DAUGHTER
 
-t_shell *get_shell(void)
-{
-	static t_shell shell;
+// t_shell *get_shell(void)
+// {
+// 	static t_shell shell;
 
-	return (&shell);
-}
+// 	return (&shell);
+// }
 
 char *parse_var_env(char *str) // returns $PWD into (User/v/Home)
 {
@@ -32,7 +32,7 @@ void dollar_for_money(char **out, char **str)
 	if (**str == '?') // EXIT CODE - echo $?
 	{
 		(*str)++;
-		tmp = _string().itoa(get_shell()->ec);
+		tmp = _string().itoa(_shell()->ec);
 		while (tmp[j])
 			(*out)[i++] = tmp[j++];
 	}

@@ -15,13 +15,3 @@ int _file_create(int fd[2], char *path, int mode)
 		printf("Minishell: %s: Permission denied\n", path);
 	return (!(fd[0] > 2));
 }
-
-// void change_fd(int fd, t_node_command *invoker, t_node_command *this)
-// {
-// 	int fd_stored;
-
-// 	fd_stored = dup(1);
-// 	dup2(fd, 1);
-// 	this->pre_function(this);
-// 	close(fd);
-// }

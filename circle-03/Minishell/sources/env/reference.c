@@ -4,6 +4,7 @@ t_env _env(void)
 {
     static t_env _env = {
         _env_create,
+        _env_list,
         _env_get
     };
 

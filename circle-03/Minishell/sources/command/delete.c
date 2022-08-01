@@ -18,7 +18,7 @@ void _command_delete(t_node_command *command)
 	}
 }
 
-void	_command_delete_all(void)
+void _command_delete_all(void)
 {
 	t_node_command **list;
 

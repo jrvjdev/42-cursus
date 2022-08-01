@@ -1,16 +1,17 @@
 #include "../../includes/env.h"
 #include <stdio.h>
 
-t_node_env *_env_get(char *key)
+size_t *_env_size(void)
 {
+	size_t size;
 	t_node_env *env;
 
+	size = 0;
 	env = *_env().list();
 	while (env)
 	{
-		if (_string().equals(env->key, key))
-			return (env);
 		env = env->next;
+		size++;
 	}
-	return (NULL);
+	return (size);
 }

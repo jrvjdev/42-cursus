@@ -1,5 +1,12 @@
 #include "../includes/minishell.h"
 
+t_shell *_shell(void)
+{
+	static t_shell shell;
+
+	return (&shell);
+}
+
 void do_with_ac(int ac, char **av)
 {
     char *line;
@@ -26,36 +33,6 @@ void do_with_ac(int ac, char **av)
     exit(1);
 }
 
-// int main(int ac, char **av, char **env)
-// {
-//     char *line;
-//     char **cmds;
-
-//     if (ac != 1)
-//         do_with_ac(ac, av);
-//     while (*env)
-//         _env().create(*(env++));
-//     while (1)
-//     {
-//         line = readline("$> ");
-//         if (_string().length(line) > 0)
-//         {
-//             if (_string().equals(line, "exit"))
-//                 break;
-//             cmds = buffer_into_array(line);
-//             while (cmds && *cmds)
-//                 _command().create(*(cmds++));
-//             add_history(line);
-//         }
-//         _command().execute();
-//         free_arrays(cmds);
-//         free(line);
-//         line = NULL;
-//         cmds = NULL;
-//     }
-//     return (0);
-// }
-
 int main(int ac, char **av, char **env)
 {
     char *line;
@@ -64,6 +41,8 @@ int main(int ac, char **av, char **env)
     (void)av;
     if (ac != 1)
         return (0);
+    _shell()->home = getenv("HOME");
+    printf("home: %s\n", getenv("HOME"));
     while (*env)
     {
         _env().create(_string().dup(*env));

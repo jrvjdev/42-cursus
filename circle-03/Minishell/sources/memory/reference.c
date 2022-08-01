@@ -9,8 +9,7 @@ t_memory _memory(void)
         _memory_free,
         _memory_free_all,
         _memory_set,
-        _memory_copy
-    };
+        _memory_copy};
 
     return (_memory);
 }

@@ -100,13 +100,13 @@ void _command_system(t_node_command *this)
 	pid_t c_pid;
 
 	test = 0;
-	if (this->next)
+	if (!_command_token(&name, this->next))
 	{
 		name = ft_strjoin(this->name, " ");
 		name = ft_strjoin(name, this->next->pre_function(this, this->next));
 	}
 	else
-		name = ft_strjoin(this->name, "");
+		name = _string().dup(this->name);
 	if (this)
 	{
 		c_pid = fork();
@@ -121,7 +121,7 @@ void _command_system(t_node_command *this)
 				test++;
 			args[test] = NULL;
 			if (execve(get_cmd(paths, this->name), args, NULL))
-				printf("Error\n");
+				printf("Error %s\n", this->name);
 		}
 		wait(NULL);
 	}

@@ -22,7 +22,7 @@ void _memory_free(void *ptr)
     list = _memory_list();
     node = _memory_check(list, ptr);
     if (!*list || !node)
-        return ;
+        return;
     if (*list && *list == node)
         *list = node->next;
     if (node->next)

@@ -7,8 +7,7 @@ t_command _command(void)
 		_command_create,
 		_command_execute,
 		_command_delete,
-		_command_delete_all
-	};
+		_command_delete_all};
 
 	return (_command);
 }

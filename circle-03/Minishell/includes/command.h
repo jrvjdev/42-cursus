@@ -52,11 +52,15 @@ char *_command_pre_echo(t_node_command *invoker, t_node_command *this);
 char *_command_pre_cd(t_node_command *invoker, t_node_command *this);
 char *_command_pre_greater_than(t_node_command *invoker, t_node_command *this);
 char *_command_pre_more_greater_than(t_node_command *invoker, t_node_command *this);
+char *_command_pre_export(t_node_command *invoker, t_node_command *this);
+char *_command_pre_g(t_node_command *invoker, t_node_command *this);
 char *_command_pre_system(t_node_command *invoker, t_node_command *this);
 
 void _command_echo(t_node_command *this);
 void _command_cd(t_node_command *this);
 void _command_greater_than(t_node_command *this);
 void _command_more_greater_than(t_node_command *this);
+void _command_export(t_node_command *this);
+void _command_g(t_node_command *this);
 void _command_system(t_node_command *this);
 #endif

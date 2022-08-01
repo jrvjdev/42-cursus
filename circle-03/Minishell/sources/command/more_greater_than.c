@@ -35,7 +35,7 @@ void _command_more_greater_than(t_node_command *this)
 		_file().create(this->fd, _string().dup(this->next->name), O_APPEND);
 		_command().delete(this->next);
 		if (this->next)
-			this->next->function(this->next->next);
+			this->next->function(this->next);
 	}
 	_file().close(this->fd);
 	_command().delete(this);

@@ -8,4 +8,4 @@
 
 void _signal(void);
 
-#endif // DOBLY_LINKED_LIST_H
+#endif

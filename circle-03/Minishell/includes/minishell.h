@@ -13,10 +13,12 @@
 
 typedef struct s_minishell
 {
-	char **env; // link_list to save envps
-	int ec;			// exitcode
+	char **env;
+	char *pwd;
+	char *home;
+	int ec;
 } t_shell;
 
-t_shell *get_shell(void);
+t_shell *_shell(void);
 
 #endif // DOBLY_LINKED_LIST_H

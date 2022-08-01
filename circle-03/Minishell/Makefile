@@ -33,7 +33,9 @@ SRCS		=	${CHAR}/is_alpha.c \
 				${COMMAND}/delete.c \
 				${COMMAND}/echo.c \
 				${COMMAND}/execute.c \
+				${COMMAND}/export.c \
 				${COMMAND}/function.c \
+				${COMMAND}/g.c \
 				${COMMAND}/greater_than.c \
 				${COMMAND}/more_greater_than.c \
 				${COMMAND}/name.c \
@@ -41,6 +43,7 @@ SRCS		=	${CHAR}/is_alpha.c \
 				${COMMAND}/reference.c \
 				${COMMAND}/system.c \
 				${COMMAND}/token.c \
+				${COMMAND}/unset.c \
 				${ENV}/add.c \
 				${ENV}/create.c \
 				${ENV}/get.c \
